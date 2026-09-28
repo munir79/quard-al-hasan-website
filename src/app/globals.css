@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   QARDH AL HASAN FINTECH - ROYAL ELECTRIC PURPLE & ISOMETRIC 3D THEME
+   --------------------------------------------------------------------------
+   Faithfully matched to the official brand brochure:
+   - Primary: Electric Violet & Royal Purple (#8b5cf6, #7c3aed, #a855f7)
+   - Secondary / Accent: Neon Magenta & Bright Lavender (#c084fc, #d946ef, #e879f9)
+   - Laser Accent: Electric Cyan (#00f0ff, #38bdf8)
+   - Canvas: Deep Midnight Violet (#080214, #0d041c, #13072b)
+   - Surface: Royal Deep Violet (#180938, #1f0c47, #270f59)
+   ========================================================================== */
+
+:root {
+  /* Brand Palette Variables */
+  --brand-bg: #090314;
+  --brand-surface: #120626;
+  --brand-card: #190938;
+  --brand-card-hover: #220d4c;
+  --brand-border: rgba(168, 85, 247, 0.22);
+  --brand-border-hover: rgba(192, 132, 252, 0.6);
+  --brand-purple: #8b5cf6;
+  --brand-violet: #7c3aed;
+  --brand-magenta: #d946ef;
+  --brand-lavender: #c084fc;
+  --brand-cyan: #00f0ff;
+  --brand-glow: rgba(139, 92, 246, 0.4);
+
+  /* Primary Mapped Values */
+  --primary: #7c3aed;
+  --primary-hover: #6d28d9;
+  --primary-light: #c084fc;
+  --secondary: #d946ef;
+  --secondary-hover: #c026d3;
+  --secondary-light: #f472b6;
+  --accent: #00f0ff;
+
+  --brand-text: #f8fafc;
+  --brand-muted: #a78bfa;
+}
+
+/* Base Body */
+body {
+  color: #f8fafc;
+  background-color: #090314;
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.28) 0%, transparent 60%),
+    radial-gradient(circle at 85% 25%, rgba(217, 70, 239, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 15% 75%, rgba(0, 240, 255, 0.08) 0%, transparent 50%),
+    linear-gradient(180deg, #090314 0%, #0e0521 50%, #090314 100%);
+  background-attachment: fixed;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Purple Bento Card */
+.purple-card {
+  background: rgba(22, 9, 48, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  border-radius: 1.25rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.purple-card:hover {
+  background: rgba(31, 12, 71, 0.9);
+  border-color: rgba(192, 132, 252, 0.6);
+  box-shadow: 0 0 35px -5px rgba(139, 92, 246, 0.45);
+  transform: translateY(-3px);
+}
+
+/* Backward compatibility for figma-card */
+.figma-card {
+  background: rgba(22, 9, 48, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  border-radius: 1.25rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.figma-card:hover {
+  background: rgba(31, 12, 71, 0.9);
+  border-color: rgba(192, 132, 252, 0.6);
+  box-shadow: 0 0 35px -5px rgba(139, 92, 246, 0.45);
+  transform: translateY(-3px);
+}
+
+/* Glass Panels */
+.glass-panel {
+  background: rgba(20, 8, 44, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(30, 12, 68, 0.88);
+  border-color: rgba(192, 132, 252, 0.6);
+  box-shadow: 0 0 35px -5px rgba(139, 92, 246, 0.45);
+  transform: translateY(-3px);
+}
+
+/* Purple Buttons matching Brochure */
+.btn-purple-primary {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
+  color: #ffffff;
+  font-weight: 800;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-purple-primary:hover {
+  background: linear-gradient(135deg, #6d28d9 0%, #9333ea 50%, #d946ef 100%);
+  box-shadow: 0 0 35px rgba(217, 70, 239, 0.65);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-purple-secondary {
+  background: rgba(139, 92, 246, 0.1);
+  color: #f3e8ff;
+  font-weight: 700;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(10px);
+}
+
+.btn-purple-secondary:hover {
+  background: rgba(139, 92, 246, 0.22);
+  border-color: rgba(192, 132, 252, 0.7);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+/* Compatibility aliases for previous figma button classes */
+.btn-figma-primary {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
+  color: #ffffff;
+  font-weight: 800;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-figma-primary:hover {
+  background: linear-gradient(135deg, #6d28d9 0%, #9333ea 50%, #d946ef 100%);
+  box-shadow: 0 0 35px rgba(217, 70, 239, 0.65);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-figma-secondary {
+  background: rgba(139, 92, 246, 0.1);
+  color: #f3e8ff;
+  font-weight: 700;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  transition: all 0.25s ease;
+}
+
+.btn-figma-secondary:hover {
+  background: rgba(139, 92, 246, 0.22);
+  border-color: rgba(192, 132, 252, 0.7);
+  color: #ffffff;
+}
+
+/* High-Tech Grid Pattern with Purple Tint */
+.cyber-grid {
+  background-image:
+    linear-gradient(to right, rgba(168, 85, 247, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(168, 85, 247, 0.08) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+/* Animations */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+@keyframes beam-glow {
+  0%, 100% {
+    opacity: 0.4;
+    filter: drop-shadow(0 0 8px #a855f7);
+  }
+  50% {
+    opacity: 0.9;
+    filter: drop-shadow(0 0 20px #d946ef);
+  }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-beam-glow {
+  animation: beam-glow 4s ease-in-out infinite;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090314;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(192, 132, 252, 0.6);
+}
+
+:focus-visible {
+  outline: 2px solid #a855f7;
+  outline-offset: 2px;
+}
+
+/* Continuous Marquee (Right to Left) */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
