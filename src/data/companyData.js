@@ -34,7 +34,8 @@ export const whyChooseUsData = [
   {
     title: "Innovative Solutions",
     description: "We use the latest technologies to build future-ready solutions.",
-    iconName: "Rocket",
+    // iconName: "Rocket",
+    iconName: "TrendingUp",
   },
   {
     title: "Secure & Reliable",
@@ -111,7 +112,7 @@ export const servicesData = [
       "CMS / Administrative Dashboards",
       "Secure Payment Gateway Integration",
     ],
-    techStack: ["C#", ".NET", "Python", "Java", "MongoDB", "MySQL", "GitHub"],
+    techStack: ["Javascript", "Next js", "Reactjs", "Node js", "MongoDB", "MySQL", "GitHub"],
     badge: "High Scalability",
   },
   {
@@ -239,11 +240,18 @@ export const teamMembersData = [
     skills: ["Operations", "Client Relations", "Team Leadership"],
   },
   {
-    name: "Farid",
+    name: "Turzo",
+    role: "Digital Marketing (SEO Specialist)",
+    department: "Growth & Marketing",
+    description: "Campaign execution, SMM strategies, paid ad conversion optimization, and analytics reporting.",
+    skills: ["SEO","Google Ads", "SMM", "Copywriting", "Funnel Design"],
+  },
+  {
+    name: "Jakir Hossain Munir",
     role: "Software Developer",
-    department: "Engineering",
+    department: " Software Engineering",
     description: "Backend architecture, enterprise API development, database optimization, and custom software systems.",
-    skills: ["C#", ".NET", "Python", "Database Architecture"],
+    skills: ["Javascript", "Node js", "Next js", "Database Architecture"],
   },
   {
     name: "Alif",
@@ -259,13 +267,13 @@ export const teamMembersData = [
     description: "Campaign execution, SMM strategies, paid ad conversion optimization, and analytics reporting.",
     skills: ["Google Ads", "SMM", "Copywriting", "Funnel Design"],
   },
-  {
-    name: "Munir",
-    role: "Developer",
-    department: "Engineering",
-    description: "Full-stack module engineering, testing, continuous deployment integration, and platform maintenance.",
-    skills: ["PHP", "Laravel", "MySQL", "REST APIs"],
-  },
+ {
+  name: "Shakib",
+  role: "WordPress Developer",
+  department: "Engineering",
+  description: "WordPress website development, theme customization, plugin integration, performance optimization, and website maintenance.",
+  skills: ["WordPress", "PHP", "WooCommerce", "MySQL", "Elementor"],
+},
 ];
 
 export const targetMarketData = [
