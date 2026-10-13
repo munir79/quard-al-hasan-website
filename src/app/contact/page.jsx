@@ -31,33 +31,59 @@ export default function ContactPage() {
   return (
     <div className="py-10 sm:py-16 space-y-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* =========================================================================
-          1. FIRST SECTION: HERO IMAGE BANNER (Verified Zero People)
+          1. HERO SECTION: Full Clear Panoramic Boardroom Image with Frosted Glass Overlay
           ========================================================================= */}
-      <section className="relative rounded-3xl p-1 bg-gradient-to-tr from-purple-500/40 via-fuchsia-500/30 to-pink-400/20 shadow-2xl overflow-hidden">
-        <div className="relative rounded-2xl overflow-hidden min-h-[380px] sm:min-h-[460px] flex items-end bg-[#0c041a] group">
-          <img
-            src="/images/corporate_boardroom.jpg"
-            alt="Qardh Al Hasan Corporate Operations Headquarters in Brickfields, Kuala Lumpur"
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#090314] via-[#090314]/75 to-[#090314]/25 pointer-events-none" />
+      <section className="relative rounded-3xl overflow-hidden min-h-[480px] sm:min-h-[520px] flex items-center p-6 sm:p-12 lg:p-14 border border-slate-200/90 shadow-2xl group">
+        {/* Full-Bleed Clear Background Image */}
+        <img
+          src="/images/corporate_boardroom.jpg"
+          alt="Qardh Al Hasan Corporate Operations Headquarters in Brickfields, Kuala Lumpur"
+          className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-1000"
+        />
 
-          {/* Clean Content Directly on Image */}
-          <div className="relative z-10 p-6 sm:p-12 max-w-4xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/30 backdrop-blur-md border border-purple-400/40 text-xs font-bold text-purple-200">
-              <MessageSquare size={14} className="text-fuchsia-400" />
-              <span>Brickfields, Kuala Lumpur Operations</span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
-              Contact{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-300 to-pink-400">
-                Information
-              </span>
-            </h1>
-            <p className="text-base sm:text-lg text-purple-200/90 leading-relaxed font-normal max-w-3xl">
-              We are excited to explore strategic collaboration with you. For more information about our products, software solutions, or offshore team engagements, please connect directly with our engineering advisory desk.
-            </p>
+        {/* Silky Frosted Gradient: leaves the image full and crystal-clear on the right, providing high-contrast readability on the left */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/20 sm:to-transparent pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#4D47D7]/10 rounded-full blur-3xl pointer-events-none" />
+
+        {/* Content on Aesthetic Frosted Glass Card Area */}
+        <div className="relative z-10 max-w-2xl space-y-5 bg-white/90 sm:bg-white/80 backdrop-blur-xl p-6 sm:p-10 rounded-3xl border border-white/80 shadow-2xl">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#4D47D7]/10 border border-[#4D47D7]/20 text-xs font-bold text-[#4D47D7]">
+            <MessageSquare size={14} className="text-[#4D47D7]" />
+            <span>Brickfields, Kuala Lumpur Operations</span>
           </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+            Contact{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4D47D7] to-[#706bf5]">
+              Information
+            </span>
+          </h1>
+
+          <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
+            We are excited to explore strategic collaboration with you. For more information about our products, software solutions, or offshore team engagements, please connect directly with our engineering advisory desk.
+          </p>
+
+          <div className="flex flex-wrap gap-2.5 pt-1">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/90 border border-slate-200 text-xs font-bold text-slate-800 shadow-xs">
+              <Clock size={14} className="text-[#4D47D7]" />
+              24h Response SLA
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/90 border border-slate-200 text-xs font-bold text-slate-800 shadow-xs">
+              <MapPin size={14} className="text-[#4D47D7]" />
+              Kuala Lumpur HQ
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/90 border border-slate-200 text-xs font-bold text-slate-800 shadow-xs">
+              <Globe size={14} className="text-[#4D47D7]" />
+              Global Clients Welcome
+            </span>
+          </div>
+        </div>
+
+        {/* Floating Live Badge on the bottom-right corner of the clear photo */}
+        <div className="hidden md:flex absolute bottom-6 right-6 z-10 items-center gap-2 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl border border-white/80 shadow-lg text-xs font-mono">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+          <span className="text-slate-800 font-bold">Kuala Lumpur Headquarters</span>
+          <span className="text-[#4D47D7] font-semibold">&bull; Brickfields</span>
         </div>
       </section>
 
@@ -68,22 +94,22 @@ export default function ContactPage() {
           {/* Direct Phone Card */}
           <a
             href={`tel:${companyInfo.phoneRaw}`}
-            className="flex items-start gap-4 p-6 rounded-3xl purple-card group transition-all"
+            className="flex items-start gap-4 p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[#4D47D7]/40 group transition-all"
           >
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-fuchsia-500 text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-purple-600/30 group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 rounded-2xl bg-[#4D47D7]/10 text-[#4D47D7] border border-[#4D47D7]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#4D47D7] group-hover:text-white transition-all shadow-sm">
               <Phone size={22} />
             </div>
             <div>
-              <span className="text-xs font-black uppercase tracking-wider text-purple-300/80">
+              <span className="text-xs font-black uppercase tracking-wider text-slate-500">
                 Direct Telephones
               </span>
-              <h3 className="text-lg font-black text-white group-hover:text-purple-300 transition-colors mt-0.5">
+              <h3 className="text-lg font-black text-slate-900 group-hover:text-[#4D47D7] transition-colors mt-0.5">
                 {companyInfo.phone}
               </h3>
-              <p className="text-sm font-semibold text-purple-300">
+              <p className="text-sm font-semibold text-slate-700">
                 {companyInfo.phoneSecondary}
               </p>
-              <p className="text-xs text-purple-400/80 font-medium mt-1">
+              <p className="text-xs text-slate-500 font-medium mt-1">
                 Mon - Fri, 9:00 AM - 6:00 PM (GMT+8 Malaysia)
               </p>
             </div>
@@ -92,52 +118,52 @@ export default function ContactPage() {
           {/* Email Card */}
           <a
             href={`mailto:${companyInfo.email}`}
-            className="flex items-start gap-4 p-6 rounded-3xl purple-card group transition-all"
+            className="flex items-start gap-4 p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[#4D47D7]/40 group transition-all"
           >
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-fuchsia-500 text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-purple-600/30 group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 rounded-2xl bg-[#4D47D7]/10 text-[#4D47D7] border border-[#4D47D7]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#4D47D7] group-hover:text-white transition-all shadow-sm">
               <Mail size={22} />
             </div>
             <div className="truncate">
-              <span className="text-xs font-black uppercase tracking-wider text-purple-300/80">
+              <span className="text-xs font-black uppercase tracking-wider text-slate-500">
                 Official Inquiries
               </span>
-              <h3 className="text-base sm:text-lg font-black text-white group-hover:text-fuchsia-300 transition-colors mt-0.5 truncate">
+              <h3 className="text-base sm:text-lg font-black text-slate-900 group-hover:text-[#4D47D7] transition-colors mt-0.5 truncate">
                 {companyInfo.email}
               </h3>
-              <p className="text-xs text-purple-400/80 font-medium mt-1">
+              <p className="text-xs text-slate-500 font-medium mt-1">
                 Typical reply turnaround within 24 hours
               </p>
             </div>
           </a>
 
           {/* Office Location Card */}
-          <div className="flex items-start gap-4 p-6 rounded-3xl purple-card">
-            <div className="w-12 h-12 rounded-2xl bg-purple-950/60 border border-purple-500/30 text-purple-300 flex items-center justify-center flex-shrink-0">
+          <div className="flex items-start gap-4 p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm">
+            <div className="w-12 h-12 rounded-2xl bg-slate-100 text-[#4D47D7] border border-slate-200 flex items-center justify-center flex-shrink-0">
               <MapPin size={22} />
             </div>
             <div>
-              <span className="text-xs font-black uppercase tracking-wider text-purple-300/80">
+              <span className="text-xs font-black uppercase tracking-wider text-slate-500">
                 Corporate Headquarters
               </span>
-              <h3 className="text-sm sm:text-base font-black text-white mt-0.5 leading-snug">
+              <h3 className="text-sm sm:text-base font-black text-slate-900 mt-0.5 leading-snug">
                 {companyInfo.address}
               </h3>
-              <p className="text-xs text-purple-400 font-mono mt-1">
+              <p className="text-xs text-[#4D47D7] font-mono mt-1 font-bold">
                 {companyInfo.name}
               </p>
             </div>
           </div>
 
           {/* WhatsApp Direct Action */}
-          <div className="p-6 rounded-3xl bg-gradient-to-br from-purple-950/70 via-fuchsia-950/50 to-[#0e0422] border border-purple-400/30 space-y-3 shadow-xl backdrop-blur-xl">
-            <div className="flex items-center gap-2 text-fuchsia-300 font-black text-xs uppercase tracking-wider">
+          <div className="p-6 rounded-3xl bg-gradient-to-br from-indigo-50/80 via-white to-purple-50/60 border border-slate-200 space-y-3 shadow-md">
+            <div className="flex items-center gap-2 text-[#4D47D7] font-black text-xs uppercase tracking-wider">
               <Sparkles size={14} />
               <span>Instant Messenger Desk</span>
             </div>
-            <h4 className="text-lg font-black text-white">
+            <h4 className="text-lg font-black text-slate-900">
               Prefer to Chat on WhatsApp?
             </h4>
-            <p className="text-xs text-purple-200/80 leading-relaxed font-normal">
+            <p className="text-xs text-slate-600 leading-relaxed font-normal">
               Connect directly with our solutions representative on WhatsApp for quick technical scoping and inquiries.
             </p>
             <a
@@ -159,12 +185,12 @@ export default function ContactPage() {
       </section>
 
       {/* Frequently Asked Questions */}
-      <section className="purple-card p-8 sm:p-12 space-y-8 shadow-2xl">
+      <section className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200/90 shadow-xl space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-3">
-          <span className="text-xs font-black uppercase tracking-wider text-fuchsia-400">
+          <span className="text-xs font-black uppercase tracking-wider text-[#4D47D7]">
             Common Inquiries
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black text-white">
+          <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
             Frequently Asked Questions
           </h2>
         </div>
@@ -173,10 +199,10 @@ export default function ContactPage() {
           {faqs.map((faq, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl bg-purple-950/40 border border-purple-500/20 space-y-2 hover:border-purple-400/40 transition-colors"
+              className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 hover:border-[#4D47D7]/40 transition-colors"
             >
-              <h3 className="text-base font-black text-white">{faq.q}</h3>
-              <p className="text-xs sm:text-sm text-purple-200/80 leading-relaxed font-normal">
+              <h3 className="text-base font-black text-slate-900">{faq.q}</h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                 {faq.a}
               </p>
             </div>

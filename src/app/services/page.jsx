@@ -33,39 +33,46 @@ export default function ServicesPage() {
   return (
     <div className="w-full space-y-12 sm:space-y-16 pb-16 overflow-hidden">
       {/* =========================================================================
-          1. FULL-WIDTH COVER HERO BANNER WITH TEXT DIRECTLY ON IMAGE
+          1. HERO BANNER: Full Clear Panoramic Tech Desk Image with Frosted Glass Overlay
           ========================================================================= */}
-      <section className="relative w-full min-h-[380px] sm:min-h-[440px] flex items-center border-b border-purple-500/20 bg-[#090314] overflow-hidden">
-        {/* Full-bleed background image */}
+      <section className="relative w-full min-h-[460px] sm:min-h-[500px] flex items-center border-b border-slate-200 overflow-hidden group">
+        {/* Full-Bleed Clear Background Image */}
         <img
           src="/images/hero_fintech_desk.jpg"
           alt="Fintech Command Suite"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-1000"
         />
 
-        {/* High-contrast dark gradient scrim */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#090314] via-[#090314]/85 to-[#090314]/50 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#090314] via-transparent to-[#090314]/40 pointer-events-none" />
+        {/* Silky Frosted Gradient: leaves image full and crystal-clear on the right, providing high-contrast readability on the left */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/20 sm:to-transparent pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#4D47D7]/10 rounded-full blur-3xl pointer-events-none" />
 
         {/* Text Container Centered Over Image */}
         <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 py-12">
-          <div className="max-w-2xl space-y-3 text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/20 backdrop-blur-md border border-purple-400/30 text-xs font-mono font-medium text-purple-200">
-              <Layers size={13} className="text-fuchsia-400" />
+          <div className="max-w-2xl space-y-4 text-left bg-white/90 sm:bg-white/80 backdrop-blur-xl p-6 sm:p-10 rounded-3xl border border-white/80 shadow-2xl">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#4D47D7]/10 border border-[#4D47D7]/20 text-xs font-mono font-bold text-[#4D47D7]">
+              <Layers size={13} className="text-[#4D47D7]" />
               <span>Full-Spectrum ICT & Fintech Solutions</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
               What{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-300 to-pink-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4D47D7] via-[#6366f1] to-[#0ea5e9]">
                 We Offer
               </span>
             </h1>
 
-            <p className="text-sm sm:text-base text-purple-200/80 leading-relaxed font-normal">
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
               From custom software platforms and Shariah financial technology to digital marketing and high-authority algorithmic SEO, engineered for enterprise scale.
             </p>
           </div>
+        </div>
+
+        {/* Floating Live Badge on the bottom-right corner of the clear photo */}
+        <div className="hidden md:flex absolute bottom-6 right-8 z-10 items-center gap-2 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl border border-white/80 shadow-lg text-xs font-mono">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+          <span className="text-slate-800 font-bold">Solutions Operations</span>
+          <span className="text-[#4D47D7] font-semibold">&bull; Kuala Lumpur HQ</span>
         </div>
       </section>
 
@@ -82,42 +89,42 @@ export default function ServicesPage() {
               <div
                 key={service.id}
                 id={service.id}
-                className="purple-card p-6 sm:p-8 rounded-xl border border-purple-500/20 bg-[#120626]/60 shadow-xl relative overflow-hidden group"
+                className="purple-card p-6 sm:p-8 rounded-2xl border border-slate-200 bg-white shadow-sm hover:border-[#4D47D7]/30 transition-all relative overflow-hidden group"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start relative z-10">
                   {/* Service Info Column */}
                   <div className={`lg:col-span-7 space-y-4 ${!isEven ? "lg:order-2" : ""}`}>
                     <div className="flex items-center gap-3">
-                      <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-purple-600 to-fuchsia-500 flex items-center justify-center text-white shrink-0 shadow-md shadow-purple-600/30">
+                      <div className="w-11 h-11 rounded-xl bg-[#4D47D7] flex items-center justify-center text-white shrink-0 shadow-md shadow-[#4D47D7]/30">
                         <Icon size={20} className="stroke-[2.2]" />
                       </div>
                       <div>
-                        <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-fuchsia-300 block">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#4D47D7] block">
                           {service.badge}
                         </span>
-                        <h2 className="text-xl sm:text-2xl font-bold text-white">
+                        <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
                           {service.title}
                         </h2>
                       </div>
                     </div>
 
-                    <p className="text-xs font-mono font-medium text-purple-300">
+                    <p className="text-xs font-mono font-semibold text-[#4D47D7]">
                       {service.subtitle}
                     </p>
 
-                    <p className="text-xs sm:text-sm text-purple-100/80 leading-relaxed font-normal">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                       {service.description}
                     </p>
 
                     {/* Solutions List */}
                     <div className="space-y-2 pt-1">
-                      <h4 className="text-[11px] font-mono font-semibold uppercase tracking-wider text-purple-300/70">
+                      <h4 className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500">
                         Deliverables & Architecture
                       </h4>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {service.solutions.map((solution, sIdx) => (
-                          <div key={sIdx} className="flex items-start gap-2 text-xs text-purple-200">
-                            <CheckCircle2 size={13} className="text-fuchsia-400 shrink-0 mt-0.5" />
+                          <div key={sIdx} className="flex items-start gap-2 text-xs text-slate-700">
+                            <CheckCircle2 size={13} className="text-[#4D47D7] shrink-0 mt-0.5" />
                             <span>{solution}</span>
                           </div>
                         ))}
@@ -128,7 +135,7 @@ export default function ServicesPage() {
                     <div className="pt-2">
                       <Link
                         href="/contact"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-medium text-xs transition-all shadow-md shadow-purple-600/25"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#4D47D7] hover:bg-[#3d37c9] text-white font-bold text-xs transition-all shadow-md shadow-[#4D47D7]/25"
                       >
                         <span>Inquire About {service.title}</span>
                         <ArrowRight size={12} />
@@ -138,12 +145,12 @@ export default function ServicesPage() {
 
                   {/* Tech Stack Box */}
                   <div className={`lg:col-span-5 w-full ${!isEven ? "lg:order-1" : ""}`}>
-                    <div className="p-4 sm:p-5 rounded-xl bg-purple-950/40 border border-purple-500/20 space-y-4">
-                      <div className="flex items-center justify-between pb-3 border-b border-purple-500/20">
-                        <h4 className="text-[11px] font-mono font-semibold uppercase tracking-wider text-fuchsia-300">
+                    <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+                      <div className="flex items-center justify-between pb-3 border-b border-slate-200">
+                        <h4 className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#4D47D7]">
                           Tech Stack
                         </h4>
-                        <span className="text-[10px] text-purple-400 font-mono">
+                        <span className="text-[10px] text-slate-500 font-mono">
                           Enterprise
                         </span>
                       </div>
@@ -152,15 +159,15 @@ export default function ServicesPage() {
                         {service.techStack.map((tech) => (
                           <div
                             key={tech}
-                            className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-purple-950/70 border border-purple-500/20 text-[11px] font-mono text-purple-200 shadow-sm"
+                            className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[11px] font-mono text-slate-700 shadow-2xs"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-fuchsia-400" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#4D47D7]" />
                             <span>{tech}</span>
                           </div>
                         ))}
                       </div>
 
-                      <p className="text-[11px] text-purple-300/70 leading-relaxed font-normal">
+                      <p className="text-[11px] text-slate-500 leading-relaxed font-normal">
                         Delivered with enterprise-grade security protocols, automated CI/CD pipelines, and continuous optimization.
                       </p>
                     </div>
@@ -172,17 +179,17 @@ export default function ServicesPage() {
         </section>
 
         {/* =========================================================================
-            3. ENGINEERING PROCESS BANNER
+            3. ENGINEERING PROCESS BANNER WITH COOL GRADIENT
             ========================================================================= */}
-        <section className="purple-card p-6 sm:p-8 rounded-xl border border-purple-500/20 bg-[#120626]/60 shadow-xl space-y-6">
+        <section className="p-6 sm:p-10 rounded-3xl bg-gradient-to-br from-indigo-50/80 via-white to-purple-50/50 border border-slate-200/90 shadow-lg space-y-6">
           <div className="text-center max-w-xl mx-auto space-y-1.5">
-            <span className="text-[11px] font-mono uppercase tracking-wider text-fuchsia-400 font-semibold">
+            <span className="text-[11px] font-mono uppercase tracking-wider text-[#4D47D7] font-bold">
               Methodology
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-white">
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
               How We Deliver Excellence
             </h2>
-            <p className="text-xs sm:text-sm text-purple-200/80">
+            <p className="text-xs sm:text-sm text-slate-600">
               Our agile engineering lifecycle guarantees speed and stability from kickoff to post-launch.
             </p>
           </div>
@@ -194,12 +201,12 @@ export default function ServicesPage() {
               { step: "03", title: "Agile Build", desc: "Iterative sprints with clean code, testing, and continuous feedback." },
               { step: "04", title: "Deployment", desc: "Automated deployment, security hardening, and dedicated maintenance." },
             ].map((item) => (
-              <div key={item.step} className="p-4 rounded-xl bg-purple-950/40 border border-purple-500/20 space-y-1.5">
-                <span className="text-lg font-black text-fuchsia-400 font-mono">
+              <div key={item.step} className="p-4 rounded-xl bg-white border border-slate-200 space-y-1.5 shadow-xs">
+                <span className="text-lg font-black text-[#4D47D7] font-mono">
                   {item.step}
                 </span>
-                <h3 className="text-sm font-bold text-white">{item.title}</h3>
-                <p className="text-xs text-purple-200/80 leading-relaxed font-normal">{item.desc}</p>
+                <h3 className="text-sm font-bold text-slate-900">{item.title}</h3>
+                <p className="text-xs text-slate-600 leading-relaxed font-normal">{item.desc}</p>
               </div>
             ))}
           </div>

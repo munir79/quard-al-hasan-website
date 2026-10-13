@@ -33,15 +33,15 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="purple-card p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+    <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-xl relative overflow-hidden">
       {isSubmitted ? (
         <div className="py-12 px-4 text-center space-y-5 animate-fade-in">
-          <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+          <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 flex items-center justify-center mx-auto shadow-sm">
             <CheckCircle2 size={36} />
           </div>
-          <h3 className="text-2xl font-black text-white">Thank You for Reaching Out!</h3>
-          <p className="text-sm text-purple-200/90 max-w-md mx-auto leading-relaxed font-normal">
-            Your inquiry has been received by the <span className="text-white font-bold">{companyInfo.name}</span> team in Brickfields, Kuala Lumpur. One of our solutions architects will contact you within 24 business hours.
+          <h3 className="text-2xl font-black text-slate-900">Thank You for Reaching Out!</h3>
+          <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed font-normal">
+            Your inquiry has been received by the <span className="text-[#4D47D7] font-bold">{companyInfo.name}</span> team in Brickfields, Kuala Lumpur. One of our solutions architects will contact you within 24 business hours.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
             <button
@@ -56,7 +56,7 @@ export default function ContactForm() {
                   message: "",
                 });
               }}
-              className="px-5 py-2.5 rounded-xl bg-purple-900/40 hover:bg-purple-900/60 text-white text-xs font-bold transition-all border border-purple-500/30"
+              className="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition-all border border-slate-200"
             >
               Send Another Inquiry
             </button>
@@ -74,21 +74,21 @@ export default function ContactForm() {
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
           <div className="space-y-2">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-purple-500/15 text-purple-200 border border-purple-400/30">
-              <Sparkles size={12} className="text-fuchsia-400" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#4D47D7]/10 text-[#4D47D7] border border-[#4D47D7]/20">
+              <Sparkles size={12} className="text-[#4D47D7]" />
               <span>Fast 24-Hour Response SLA</span>
             </span>
-            <h3 className="text-2xl sm:text-3xl font-black text-white">
+            <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
               Request a Project Consultation
             </h3>
-            <p className="text-xs sm:text-sm text-purple-200/80 font-normal">
+            <p className="text-xs sm:text-sm text-slate-600 font-normal">
               Tell us about your project requirements or offshore team needs.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-mono font-bold uppercase tracking-wider text-purple-300 mb-1.5">
+              <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-1.5">
                 Full Name *
               </label>
               <input
@@ -98,12 +98,12 @@ export default function ContactForm() {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="e.g. Ahmad Razif"
-                className="w-full px-4 py-3 rounded-xl bg-purple-950/40 border border-purple-500/30 focus:border-fuchsia-400 focus:bg-purple-950/70 focus:ring-1 focus:ring-fuchsia-400 text-sm text-white placeholder-purple-400/50 transition-all outline-none font-medium"
+                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-[#4D47D7] focus:ring-2 focus:ring-[#4D47D7]/20 text-sm text-slate-900 placeholder-slate-400 transition-all outline-none font-medium"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-mono font-bold uppercase tracking-wider text-purple-300 mb-1.5">
+              <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-1.5">
                 Business Email *
               </label>
               <input
@@ -113,14 +113,14 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="name@company.com"
-                className="w-full px-4 py-3 rounded-xl bg-purple-950/40 border border-purple-500/30 focus:border-fuchsia-400 focus:bg-purple-950/70 focus:ring-1 focus:ring-fuchsia-400 text-sm text-white placeholder-purple-400/50 transition-all outline-none font-medium"
+                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-[#4D47D7] focus:ring-2 focus:ring-[#4D47D7]/20 text-sm text-slate-900 placeholder-slate-400 transition-all outline-none font-medium"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-mono font-bold uppercase tracking-wider text-purple-300 mb-1.5">
+              <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-1.5">
                 Phone / WhatsApp Number
               </label>
               <input
@@ -129,12 +129,12 @@ export default function ContactForm() {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="+60 1x-xxx xxxx"
-                className="w-full px-4 py-3 rounded-xl bg-purple-950/40 border border-purple-500/30 focus:border-fuchsia-400 focus:bg-purple-950/70 focus:ring-1 focus:ring-fuchsia-400 text-sm text-white placeholder-purple-400/50 transition-all outline-none font-medium"
+                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-[#4D47D7] focus:ring-2 focus:ring-[#4D47D7]/20 text-sm text-slate-900 placeholder-slate-400 transition-all outline-none font-medium"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-mono font-bold uppercase tracking-wider text-purple-300 mb-1.5">
+              <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-1.5">
                 Company / Organization
               </label>
               <input
@@ -143,37 +143,37 @@ export default function ContactForm() {
                 value={formData.company}
                 onChange={handleChange}
                 placeholder="e.g. Global Tech Sdn Bhd"
-                className="w-full px-4 py-3 rounded-xl bg-purple-950/40 border border-purple-500/30 focus:border-fuchsia-400 focus:bg-purple-950/70 focus:ring-1 focus:ring-fuchsia-400 text-sm text-white placeholder-purple-400/50 transition-all outline-none font-medium"
+                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-[#4D47D7] focus:ring-2 focus:ring-[#4D47D7]/20 text-sm text-slate-900 placeholder-slate-400 transition-all outline-none font-medium"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-mono font-bold uppercase tracking-wider text-purple-300 mb-1.5">
+            <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-1.5">
               Service Solution Required *
             </label>
             <select
               name="service"
               value={formData.service}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl bg-[#14062a] border border-purple-500/30 focus:border-fuchsia-400 focus:ring-1 focus:ring-fuchsia-400 text-sm text-white transition-all outline-none cursor-pointer font-medium"
+              className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-[#4D47D7] focus:ring-2 focus:ring-[#4D47D7]/20 text-sm text-slate-900 transition-all outline-none cursor-pointer font-medium"
             >
               {servicesData.map((srv) => (
-                <option key={srv.id} value={srv.title} className="bg-[#14062a] text-white">
+                <option key={srv.id} value={srv.title} className="bg-white text-slate-900">
                   {srv.title} ({srv.subtitle})
                 </option>
               ))}
-              <option value="Offshore Development Team" className="bg-[#14062a] text-white">
+              <option value="Offshore Development Team" className="bg-white text-slate-900">
                 Offshore Dedicated Tech Team
               </option>
-              <option value="Complete Digital Transformation" className="bg-[#14062a] text-white">
+              <option value="Complete Digital Transformation" className="bg-white text-slate-900">
                 Full Digital Transformation / Enterprise Consulting
               </option>
             </select>
           </div>
 
           <div>
-            <label className="block text-xs font-mono font-bold uppercase tracking-wider text-purple-300 mb-1.5">
+            <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-1.5">
               Project Description & Goals *
             </label>
             <textarea
@@ -183,7 +183,7 @@ export default function ContactForm() {
               value={formData.message}
               onChange={handleChange}
               placeholder="Describe your project, timeline, deliverables, or challenges..."
-              className="w-full px-4 py-3 rounded-xl bg-purple-950/40 border border-purple-500/30 focus:border-fuchsia-400 focus:bg-purple-950/70 focus:ring-1 focus:ring-fuchsia-400 text-sm text-white placeholder-purple-400/50 transition-all outline-none resize-none font-medium"
+              className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-[#4D47D7] focus:ring-2 focus:ring-[#4D47D7]/20 text-sm text-slate-900 placeholder-slate-400 transition-all outline-none resize-none font-medium"
             />
           </div>
 
