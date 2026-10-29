@@ -22,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-brand-darker text-brand-text antialiased selection:bg-secondary/30 selection:text-white">
+      <body className="bg-white text-slate-900 antialiased selection:bg-[#4D47D7] selection:text-white min-h-screen">
         <div className="relative flex min-h-screen flex-col">
           {/* Top navigation with left-to-right drawer */}
           <Navbar />

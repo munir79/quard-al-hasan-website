@@ -13,29 +13,29 @@ export default function WhatsAppFloat() {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
       {/* Expandable Chat Popup */}
       {isOpen && (
-        <div className="mb-3 w-80 sm:w-96 rounded-2xl bg-[#0e0422] border border-purple-500/30 shadow-2xl shadow-purple-950/80 overflow-hidden backdrop-blur-2xl animate-fade-in text-white">
+        <div className="mb-3 w-80 sm:w-96 rounded-2xl bg-white border border-slate-200 shadow-2xl overflow-hidden animate-fade-in text-slate-900">
           {/* Header */}
-          <div className="bg-gradient-to-r from-purple-900 via-[#1e0a42] to-fuchsia-950 p-4 border-b border-purple-500/20 flex items-center justify-between">
+          <div className="bg-gradient-to-r from-[#4D47D7] via-[#5c56e8] to-[#6e68f3] p-4 flex items-center justify-between text-white">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-400">
+                <div className="w-10 h-10 rounded-full bg-white/20 border border-white/30 flex items-center justify-center text-white">
                   <WhatsAppIcon className="w-5 h-5 fill-current" />
                 </div>
-                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 ring-2 ring-[#0e0422]" />
+                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 ring-2 ring-[#4D47D7]" />
               </div>
               <div>
                 <h4 className="text-sm font-bold text-white flex items-center gap-1.5">
                   <span>Qardh Al Hasan Support</span>
                 </h4>
-                <div className="flex items-center gap-1.5 text-[11px] text-emerald-400 font-medium">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <div className="flex items-center gap-1.5 text-[11px] text-emerald-200 font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse" />
                   <span>Typically replies instantly</span>
                 </div>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-purple-300 hover:text-white transition-colors"
+              className="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors"
               aria-label="Close chat"
             >
               <X size={16} />
@@ -43,37 +43,37 @@ export default function WhatsAppFloat() {
           </div>
 
           {/* Message Content */}
-          <div className="p-4 space-y-3 bg-[#0d041c]/60">
-            <div className="bg-purple-950/60 border border-purple-500/20 rounded-2xl rounded-tl-sm p-3.5 space-y-1 text-xs text-purple-100 shadow-inner">
-              <p className="font-semibold text-fuchsia-300 flex items-center gap-1">
+          <div className="p-4 space-y-3 bg-slate-50/70">
+            <div className="bg-white border border-slate-200 rounded-2xl rounded-tl-sm p-3.5 space-y-1 text-xs text-slate-700 shadow-sm">
+              <p className="font-semibold text-[#4D47D7] flex items-center gap-1">
                 <Sparkles size={12} />
                 <span>Customer Advisory Desk</span>
               </p>
-              <p className="leading-relaxed">
-                Hello! 👋 Welcome to <strong className="text-white">Qardh Al Hasan Fintech</strong>.
+              <p className="leading-relaxed text-slate-800">
+                Hello! 👋 Welcome to <strong className="text-slate-900">Qardh Al Hasan Fintech</strong>.
               </p>
-              <p className="leading-relaxed text-purple-200/80">
+              <p className="leading-relaxed text-slate-600">
                 How can our engineering and solutions team assist your business today?
               </p>
-              <span className="text-[10px] text-purple-400 block text-right pt-1 font-mono">
+              <span className="text-[10px] text-slate-400 block text-right pt-1 font-mono">
                 Just now
               </span>
             </div>
           </div>
 
           {/* Action Footer */}
-          <div className="p-3 bg-[#0b0317] border-t border-purple-500/20">
+          <div className="p-3 bg-white border-t border-slate-200">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm shadow-lg shadow-emerald-950 transition-all hover:scale-[1.02] active:scale-95"
+              className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm shadow-md transition-all hover:scale-[1.02] active:scale-95"
             >
               <WhatsAppIcon className="w-4 h-4 fill-white" />
               <span>Open WhatsApp Chat</span>
               <Send size={13} className="ml-0.5" />
             </a>
-            <div className="text-[10px] text-center text-purple-400/80 pt-2 font-mono">
+            <div className="text-[10px] text-center text-slate-500 pt-2 font-mono">
               Direct line: {companyInfo.phone}
             </div>
           </div>
@@ -83,8 +83,8 @@ export default function WhatsAppFloat() {
       {/* Main Floating Trigger Button */}
       <div className="flex items-center gap-2">
         {!isOpen && (
-          <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-purple-950/90 text-purple-200 text-xs font-semibold border border-purple-500/30 shadow-xl backdrop-blur-md animate-fade-in pointer-events-none">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+          <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-slate-800 text-xs font-semibold border border-slate-200 shadow-xl animate-fade-in pointer-events-none">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
             Chat with us
           </span>
         )}
@@ -93,8 +93,8 @@ export default function WhatsAppFloat() {
           onClick={() => setIsOpen(!isOpen)}
           className={`relative flex items-center justify-center w-14 h-14 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 group ${
             isOpen
-              ? "bg-purple-900/80 text-white border border-purple-400/40"
-              : "bg-[#25D366] hover:bg-[#20ba59] text-white shadow-emerald-900/60"
+              ? "bg-[#4D47D7] text-white border border-[#4D47D7]/40 shadow-indigo-500/30"
+              : "bg-[#25D366] hover:bg-[#20ba59] text-white shadow-emerald-500/30"
           }`}
           title="Chat with us on WhatsApp"
           aria-label="Toggle WhatsApp chat widget"
@@ -104,7 +104,7 @@ export default function WhatsAppFloat() {
               {/* Subtle Pulsing Ring */}
               <span className="absolute -inset-1 rounded-full bg-[#25D366]/30 animate-pulse pointer-events-none" />
               {/* Notification Badge */}
-              <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center ring-2 ring-[#090314]">
+              <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center ring-2 ring-white">
                 1
               </span>
             </>
