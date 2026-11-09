@@ -7,7 +7,7 @@ export default function BrandLogo({
   lightMode = false,
 }) {
   return (
-    <div className={`inline-flex items-center gap-3 ${className}`}>
+    <div className={`inline-flex items-center gap-2 sm:gap-3 ${className}`}>
       {/* Brand Icon SVG / Image Representation */}
       <div className="relative flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105">
         <svg
@@ -51,14 +51,14 @@ export default function BrandLogo({
       {showText && (
         <div className="flex flex-col leading-none">
           <span
-            className={`text-lg sm:text-xl font-black tracking-tight ${
+            className={`text-sm sm:text-base md:text-xl font-black tracking-tight whitespace-nowrap ${
               lightMode ? "text-white" : "text-slate-900 group-hover:text-[#4F46E5] transition-colors"
             }`}
           >
             Qardh Al Hasan
           </span>
           <span
-            className={`text-[9px] sm:text-[10px] font-bold uppercase tracking-wider mt-1 ${
+            className={`text-[8px] sm:text-[9px] md:text-[10px] font-bold uppercase tracking-wider mt-0.5 sm:mt-1 whitespace-nowrap ${
               lightMode ? "text-slate-300" : "text-slate-500"
             }`}
           >

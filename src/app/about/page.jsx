@@ -10,6 +10,8 @@ import {
   MapPin,
   Cpu,
   Globe2,
+  Sparkles,
+  CheckCircle2,
 } from "lucide-react";
 import { companyInfo, companyValues } from "@/data/companyData";
 
@@ -170,7 +172,104 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4. Headquarters & Governance (text from the left, card from the right) */}
+      {/* 4. Proprietary AI Innovation & Ethical Engine (Qardh AI) */}
+      <section className="relative py-16 sm:py-24 border-t border-white/10 overflow-hidden bg-[#080B14]">
+        <div aria-hidden className="absolute inset-0 opacity-[0.25] pointer-events-none" style={sectionGrid} />
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 h-[420px] w-[600px] rounded-full bg-gradient-to-r from-purple-600/10 via-indigo-600/15 to-blue-600/10 blur-[130px] pointer-events-none" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            
+            {/* Left: AI Philosophy & Engine Details */}
+            <RevealGroup className="lg:col-span-7 space-y-6">
+              <RevealItem from="left">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-400/25 text-xs font-mono font-bold text-purple-300">
+                  <Sparkles size={14} className="text-purple-400" />
+                  <span>AI Innovation & Automation</span>
+                </div>
+              </RevealItem>
+              <RevealItem from="left">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                  Business, Simplified with{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB]">
+                    Qardh AI
+                  </span>
+                </h2>
+              </RevealItem>
+              <RevealItem from="left">
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                  Our vision is to simplify complex enterprise workflows using intelligent automation. We engineered proprietary AI helpers that power our managed software and Shariah FinTech operations—multiplying speed, precision, and ethical governance.
+                </p>
+              </RevealItem>
+
+              <div className="space-y-3 pt-2">
+                {[
+                  "Automated zero-error Shariah ledger & interest-free calculations",
+                  "AI-assisted code generation, automated telemetry, and 24/7 security auditing",
+                  "Continuous data intelligence accelerating reporting throughput by over 60%",
+                ].map((point, pIdx) => (
+                  <RevealItem key={pIdx} from="left">
+                    <div className="flex items-start gap-3 text-sm sm:text-base text-slate-300">
+                      <CheckCircle2 size={18} className="text-emerald-400 shrink-0 mt-0.5" />
+                      <span>{point}</span>
+                    </div>
+                  </RevealItem>
+                ))}
+              </div>
+
+              <RevealItem from="up" className="pt-2">
+                <Link
+                  href="/services/fintech"
+                  className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-md shadow-indigo-500/25 transition-all hover:scale-105 active:scale-95"
+                >
+                  <span>Explore FinTech AI Solutions</span>
+                  <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </RevealItem>
+            </RevealGroup>
+
+            {/* Right: Live AI Orchestration Metric Card */}
+            <Reveal from="right" className="lg:col-span-5">
+              <div className={`${card} p-8 sm:p-9 space-y-6 relative overflow-hidden`}>
+                <div className="flex items-center justify-between pb-4 border-b border-white/10">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider">
+                      Qardh AI Live Metrics
+                    </span>
+                  </div>
+                  <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-indigo-500/15 border border-indigo-400/20 text-indigo-300 font-bold">
+                    KL NODE
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10 space-y-1">
+                    <div className="text-3xl font-black font-mono text-white">0.00%</div>
+                    <div className="text-xs text-slate-400">Riba Audit Discrepancies</div>
+                  </div>
+                  <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10 space-y-1">
+                    <div className="text-3xl font-black font-mono text-cyan-400">3x</div>
+                    <div className="text-xs text-slate-400">Compliance Audit Speed</div>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-between text-xs font-mono">
+                  <span className="text-slate-400">Data Reporting Speed:</span>
+                  <span className="text-emerald-400 font-bold">60% Faster</span>
+                </div>
+
+                <p className="text-xs text-slate-400 italic leading-relaxed text-center pt-1">
+                  Engineered in Brickfields, Kuala Lumpur for ethical transparency and ASEAN enterprise throughput.
+                </p>
+              </div>
+            </Reveal>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Headquarters & Governance (text from the left, card from the right) */}
       <section className="relative py-16 sm:py-24 border-t border-white/10 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1C] via-[#0D1730] to-[#0A0F1C] pointer-events-none" />
         <div className="absolute top-1/2 right-0 -translate-y-1/2 h-[420px] w-[620px] rounded-full bg-blue-600/15 blur-[120px] pointer-events-none" />
@@ -233,6 +332,37 @@ export default function AboutPage() {
             </Reveal>
           </div>
         </div>
+      </section>
+
+      {/* 6. Pre-Footer Call to Action (Matching User Reference Design) */}
+      <section className="relative py-20 sm:py-28 text-center overflow-hidden bg-[#0B0F19] border-t border-white/10">
+        {/* Tech Dot Grid Matrix matching user reference */}
+        <div className="absolute inset-0 bg-[radial-gradient(#3B82F6_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
+        
+        {/* Ambient subtle violet-indigo center radial glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[340px] w-[750px] rounded-full bg-gradient-to-r from-purple-600/15 via-indigo-600/20 to-blue-600/15 blur-[120px] pointer-events-none" />
+
+        <RevealGroup className="relative z-10 max-w-4xl mx-auto px-4 space-y-6">
+          <RevealItem from="left">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+              Ready to Partner with an Accountable Tech Leader?
+            </h2>
+          </RevealItem>
+          <RevealItem from="right">
+            <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+              Schedule a confidential 30-minute discovery consultation with our technical leadership in Kuala Lumpur.
+            </p>
+          </RevealItem>
+          <RevealItem from="up" className="pt-2">
+            <Link
+              href="/contact"
+              className="group inline-flex items-center gap-2.5 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-base sm:text-lg font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-[0_4px_25px_rgba(117,61,237,0.35)] hover:shadow-[0_6px_35px_rgba(46,95,235,0.5)] transition-all duration-300 hover:scale-105 active:scale-95"
+            >
+              <span>Schedule Strategy Call</span>
+              <ArrowRight size={19} className="transition-transform duration-300 group-hover:translate-x-1.5" />
+            </Link>
+          </RevealItem>
+        </RevealGroup>
       </section>
     </div>
   );

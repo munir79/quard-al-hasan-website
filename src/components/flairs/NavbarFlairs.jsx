@@ -375,12 +375,12 @@ export default function NavbarFlairs() {
             </nav>
 
             {/* 3. Right Action Pill Button (FlairsTech Style) */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-[0_4px_20px_rgba(117,61,237,0.3)] hover:shadow-[0_6px_25px_rgba(46,95,235,0.45)] transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                className="inline-flex items-center gap-1.5 px-3 sm:px-6 py-1.5 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-[0_4px_20px_rgba(117,61,237,0.3)] hover:shadow-[0_6px_25px_rgba(46,95,235,0.45)] transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
               >
-                <span>Schedule a Call</span>
+                <span>Schedule<span className="hidden sm:inline"> a Call</span></span>
                 <ArrowRight size={14} className="hidden sm:inline" />
               </Link>
 
@@ -388,10 +388,10 @@ export default function NavbarFlairs() {
               <button
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden p-2 rounded-full text-slate-700 hover:bg-slate-100 transition-colors"
+                className="lg:hidden w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full text-slate-700 hover:bg-slate-100 transition-colors"
                 aria-label="Toggle navigation"
               >
-                {isOpen ? <X size={22} /> : <Menu size={22} />}
+                {isOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
             </div>
           </div>
