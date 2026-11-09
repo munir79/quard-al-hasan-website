@@ -1,12 +1,12 @@
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import FloatingNavbar from "@/components/flairs/FloatingNavbar";
+import FooterFlairs from "@/components/flairs/FooterFlairs";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export const metadata = {
-  title: "Qardh Al Hasan Fintech Sdn Bhd | ICT & Fintech Solutions Malaysia",
+  title: "Qardh Al Hasan Fintech Sdn. Bhd. | Scale Smart Your Systems",
   description:
-    "Leading provider of innovative, scalable, and affordable digital fintech and ICT solutions in Malaysia. Offering web and software development, digital marketing, SEO, and UI/UX design.",
+    "Scale Smart Your Systems. Leading provider of AI-powered technology, Shariah-compliant fintech ledgers, and enterprise software solutions in Kuala Lumpur, Malaysia.",
   keywords: [
     "Qardh Al Hasan Fintech",
     "Fintech Malaysia",
@@ -15,23 +15,24 @@ export const metadata = {
     "UI/UX Design",
     "SEO Services Malaysia",
     "Ethical Technology Solutions",
+    "Islamic FinTech",
   ],
-  authors: [{ name: "Qardh Al Hasan Fintech Sdn Bhd" }],
+  authors: [{ name: "Qardh Al Hasan Fintech Sdn. Bhd." }],
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-white text-slate-900 antialiased selection:bg-[#4D47D7] selection:text-white min-h-screen">
+      <body className="bg-[#08080C] text-slate-900 antialiased selection:bg-[#2563EB] selection:text-white min-h-screen">
         <div className="relative flex min-h-screen flex-col">
-          {/* Top navigation with left-to-right drawer */}
-          <Navbar />
+          {/* Floating Pill Navbar (Screenshots 1 & 2) */}
+          <FloatingNavbar />
 
           {/* Main content page area */}
           <main className="flex-1">{children}</main>
 
-          {/* Interactive footer */}
-          <Footer />
+          {/* Multi-column Directory Footer */}
+          <FooterFlairs />
 
           {/* Floating WhatsApp Quick-Chat Desk */}
           <WhatsAppFloat />

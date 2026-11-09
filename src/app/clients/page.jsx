@@ -1,4 +1,5 @@
 import Link from "next/link";
+import RouteHeroBanner from "@/components/flairs/RouteHeroBanner";
 import {
   Target,
   Building2,
@@ -8,165 +9,250 @@ import {
   Store,
   CheckCircle2,
   ArrowRight,
-  HeartHandshake,
   ShieldCheck,
   TrendingUp,
+  Cpu,
+  Layers,
+  Sparkles,
 } from "lucide-react";
-import { targetMarketData, companyInfo } from "@/data/companyData";
 
 export const metadata = {
-  title: "Target Market & Clients | Qardh Al Hasan Fintech Sdn. Bhd.",
+  title: "Industries & Case Studies | Qardh Al Hasan Fintech Sdn. Bhd.",
   description:
-    "Discover how Qardh Al Hasan Fintech serves SMEs, startups, government/nonprofits, corporations, and international offshore clients with value-driven technology.",
+    "Explore how Qardh Al Hasan Fintech delivers enterprise technology and measurable business outcomes across Islamic banking, enterprise SaaS, retail, and logistics.",
 };
 
-const marketIcons = [Store, Rocket, Landmark, Building2, Globe2];
+const caseStudies = [
+  {
+    title: "How an Islamic Microfinance Cooperative Scaled Loan Disbursements by 300% with 0% Riba",
+    industry: "Banking & Islamic Finance",
+    client: "National Credit & Shariah Cooperative",
+    summary:
+      "Legacy paperwork and manual credit evaluations were delaying financing approvals by weeks. We built a bespoke automated Qardh Al Hasan ledger with digital e-KYC, decreasing turnaround from 14 days to under 15 minutes.",
+    metrics: [
+      { label: "Approval Time", value: "< 15 Mins", change: "Down from 14 Days" },
+      { label: "Disbursement Scale", value: "+300%", change: "Year-on-Year Growth" },
+      { label: "Shariah Audit Error", value: "0.00%", change: "Full AAOIFI Compliance" },
+    ],
+    tech: ["Next.js", "PostgreSQL", "Node.js", "e-KYC API", "Redis"],
+    tag: "FinTech Flagship",
+  },
+  {
+    title: "How an ASEAN Freight Logistics Provider Reduced Fleet Idle Time by 45%",
+    industry: "Logistics & Supply Chain",
+    client: "Regional Distribution Network",
+    summary:
+      "A fast-growing Malaysian freight operator needed centralized dispatch and real-time shipment monitoring. We engineered a microservices ERP that synchronized GPS telemetry, electronic proof-of-delivery, and driver dispatch.",
+    metrics: [
+      { label: "Fleet Idle Time", value: "-45%", change: "Route Optimization" },
+      { label: "Daily Deliveries", value: "+60%", change: "Automated Dispatch" },
+      { label: "System Uptime", value: "99.98%", change: "Zero Downtime SLA" },
+    ],
+    tech: ["React", "PostgreSQL", "Kafka", "Docker", "AWS"],
+    tag: "Enterprise ERP",
+  },
+  {
+    title: "How a B2B SaaS Platform Achieved Sub-Second Global Load Times and 120% Lead Growth",
+    industry: "Enterprise SaaS & Web",
+    client: "Cloud Procurement Enterprise",
+    summary:
+      "Experiencing high bounce rates and low organic search rankings due to a sluggish monolithic CMS. We re-platformed their public portals and customer onboarding to Next.js 14 with headless CMS architecture.",
+    metrics: [
+      { label: "Lighthouse Score", value: "98/100", change: "Core Web Vitals Perfect" },
+      { label: "Organic Search Leads", value: "+120%", change: "In First 90 Days" },
+      { label: "Page Load Speed", value: "0.8s", change: "Down from 4.2s" },
+    ],
+    tech: ["Next.js 14", "Tailwind CSS", "Vercel", "Technical SEO"],
+    tag: "High-Speed Web",
+  },
+];
+
+const targetMarkets = [
+  {
+    title: "Small & Medium Enterprises (SMEs)",
+    desc: "Affordable, scalable web platforms, automation tools, and local SEO to help Malaysian SMEs compete with big corporations.",
+    icon: Store,
+  },
+  {
+    title: "Fast-Growing Startups & Scale-Ups",
+    desc: "Rapid MVP development, cloud-native backend architecture, and flexible developer squads to launch products in weeks.",
+    icon: Rocket,
+  },
+  {
+    title: "Financial Institutions & Cooperatives",
+    desc: "Strictly Shariah-compliant core banking ledgers, microfinance management, and zero-riba payment systems.",
+    icon: Landmark,
+  },
+  {
+    title: "Enterprises & Corporate Groups",
+    desc: "Custom ERPs, API integrations, legacy modernization, and 24/7 managed SLA infrastructure.",
+    icon: Building2,
+  },
+];
 
 export default function ClientsPage() {
   return (
-    <div className="py-10 sm:py-16 space-y-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {/* =========================================================================
-          1. HERO SECTION: Full Clear Panoramic Image with Frosted Glass Overlay
-          ========================================================================= */}
-      <section className="relative rounded-3xl overflow-hidden min-h-[480px] sm:min-h-[520px] flex items-center p-6 sm:p-12 lg:p-14 border border-slate-200/90 shadow-2xl group">
-        {/* Full-Bleed Clear Background Image */}
-        <img
-          src="/images/hero_fintech_desk.jpg"
-          alt="Qardh Al Hasan Global Market Operations and Client Analytics Desk"
-          className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-1000"
-        />
-
-        {/* Silky Frosted Gradient: leaves the image full and crystal-clear on the right, providing high-contrast readability on the left */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/20 sm:to-transparent pointer-events-none" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#4D47D7]/10 rounded-full blur-3xl pointer-events-none" />
-
-        {/* Content on Aesthetic Frosted Glass Card Area */}
-        <div className="relative z-10 max-w-2xl space-y-5 bg-white/90 sm:bg-white/80 backdrop-blur-xl p-6 sm:p-10 rounded-3xl border border-white/80 shadow-2xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#4D47D7]/10 border border-[#4D47D7]/20 text-xs font-bold text-[#4D47D7]">
-            <Target size={14} className="text-[#4D47D7]" />
-            <span>Market Positioning & Client Reach</span>
-          </div>
-
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-            Clients and{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4D47D7] to-[#706bf5]">
-              Target Market
-            </span>
-          </h1>
-
-          <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
-            Qardh Al Hasan Fintech is strategically positioned to serve small and medium enterprises (SMEs), fast-growing startups, government entities, corporate enterprises, and international clients seeking affordable, certified offshore development teams.
-          </p>
-
-          <div className="flex flex-wrap gap-2.5 pt-1">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/90 border border-slate-200 text-xs font-bold text-slate-800 shadow-xs">
-              <ShieldCheck size={14} className="text-[#4D47D7]" />
-              5+ Target Sectors
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/90 border border-slate-200 text-xs font-bold text-slate-800 shadow-xs">
-              <TrendingUp size={14} className="text-[#4D47D7]" />
-              Global Offshore Delivery
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/90 border border-slate-200 text-xs font-bold text-slate-800 shadow-xs">
-              <Globe2 size={14} className="text-[#4D47D7]" />
-              Kuala Lumpur HQ
-            </span>
-          </div>
-        </div>
-
-        {/* Floating Live Badge on the bottom-right corner of the clear photo */}
-        <div className="hidden md:flex absolute bottom-6 right-6 z-10 items-center gap-2 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl border border-white/80 shadow-lg text-xs font-mono">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-          <span className="text-slate-800 font-bold">Client Intelligence Desk</span>
-          <span className="text-[#4D47D7] font-semibold">&bull; Kuala Lumpur</span>
-        </div>
-      </section>
-
-      {/* Target Market Breakdown */}
-      <section className="space-y-8">
-        <div className="border-b border-slate-200 pb-4">
-          <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#4D47D7]">
-            Industry Segments
+    <div className="w-full bg-white">
+      {/* 1. Immersive Hero Banner with Corporate Boardroom Photography */}
+      <RouteHeroBanner
+        badge="Proven Track Record & Case Studies"
+        badgeIcon={Target}
+        title="Real-World Outcomes."
+        titleHighlight="Quantified Impact."
+        description="Explore how we help financial institutions, enterprise operators, and fast-scaling SMEs achieve operational velocity, Shariah compliance, and market growth."
+        breadcrumbs={[{ label: "Case Studies & Outcomes" }]}
+        image="/images/corporate_boardroom.jpg"
+      >
+        <div className="flex flex-wrap items-center gap-3 pt-3 text-xs font-mono">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-slate-200 font-semibold">
+            <TrendingUp size={14} className="text-emerald-400" />
+            +300% Scaling Velocity
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
-            Organizations We Empower
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-slate-200 font-semibold">
+            <ShieldCheck size={14} className="text-[#38BDF8]" />
+            100% Shariah Compliance Audited
+          </span>
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-slate-200 font-semibold">
+            <Cpu size={14} className="text-[#A78BFA]" />
+            99.98% High Availability
+          </span>
+        </div>
+      </RouteHeroBanner>
+
+      {/* 2. Featured Case Studies (FlairsTech Signature Layout) */}
+      <section className="py-16 sm:py-24 space-y-12 sm:space-y-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="space-y-3">
+          <div className="text-xs font-mono font-bold text-[#4F46E5] uppercase tracking-widest">
+            Featured Deployments
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+            How We Deliver Business Results
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {targetMarketData.map((item, idx) => {
-            const Icon = marketIcons[idx % marketIcons.length];
-            return (
-              <div
-                key={item.title}
-                className="bg-gradient-to-b from-white via-slate-50/40 to-indigo-50/20 rounded-3xl p-8 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[#4D47D7]/40 transition-all flex flex-col justify-between group"
-              >
-                <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#4D47D7]/10 border border-[#4D47D7]/20 flex items-center justify-center text-[#4D47D7] group-hover:scale-105 group-hover:bg-[#4D47D7] group-hover:text-white transition-all">
+        <div className="space-y-10">
+          {caseStudies.map((cs, idx) => (
+            <div
+              key={idx}
+              className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 space-y-8"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
+                <div className="space-y-1">
+                  <span className="text-xs font-mono font-bold text-[#4F46E5] uppercase tracking-wider">
+                    {cs.industry} &bull; {cs.client}
+                  </span>
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 leading-snug">
+                    {cs.title}
+                  </h3>
+                </div>
+                <span className="self-start sm:self-center px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-indigo-50 text-[#4F46E5] border border-indigo-100 shrink-0">
+                  {cs.tag}
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                {/* Summary (7 Cols) */}
+                <div className="lg:col-span-7 space-y-4">
+                  <div className="text-xs font-mono font-bold text-slate-400 uppercase tracking-widest">
+                    Challenge & Solution Architecture
+                  </div>
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                    {cs.summary}
+                  </p>
+
+                  <div className="pt-2 flex flex-wrap gap-2">
+                    {cs.tech.map((t, tIdx) => (
+                      <span
+                        key={tIdx}
+                        className="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-mono font-semibold text-slate-700"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Metrics Highlight (5 Cols) */}
+                <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-3">
+                  {cs.metrics.map((m, mIdx) => (
+                    <div
+                      key={mIdx}
+                      className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-between"
+                    >
+                      <div>
+                        <div className="text-xs text-slate-500 font-medium">
+                          {m.label}
+                        </div>
+                        <div className="text-[11px] text-emerald-600 font-mono font-semibold">
+                          {m.change}
+                        </div>
+                      </div>
+                      <div className="text-2xl font-black font-mono text-slate-900">
+                        {m.value}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 3. Target Sectors We Serve */}
+      <section className="py-16 sm:py-24 bg-slate-50/70 border-t border-b border-slate-200/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="max-w-3xl space-y-3 mb-12 sm:mb-16">
+            <div className="text-xs font-mono font-bold text-[#4F46E5] uppercase tracking-widest">
+              Market Segments
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
+              Tailored Solutions for Every Growth Stage
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {targetMarkets.map((tm, idx) => {
+              const Icon = tm.icon;
+              return (
+                <div
+                  key={idx}
+                  className="p-8 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-xl transition-all duration-300 space-y-4"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-indigo-50 text-[#4F46E5] flex items-center justify-center">
                     <Icon size={24} />
                   </div>
-                  <h3 className="text-xl font-black text-slate-900 group-hover:text-[#4D47D7] transition-colors">
-                    {item.title}
+                  <h3 className="text-lg font-bold text-slate-900">
+                    {tm.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed font-normal">
-                    {item.description}
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                    {tm.desc}
                   </p>
                 </div>
-                <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-500">
-                  <span>Custom Architecture</span>
-                  <span className="text-[#4D47D7] font-semibold">Scalable Delivery</span>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+
         </div>
       </section>
 
-      {/* Value-Driven Approach & Ethical Mission */}
-      <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-indigo-50/80 via-white to-purple-50/50 border border-slate-200 shadow-xl relative overflow-hidden">
-        <div className="lg:col-span-7 space-y-6">
-          <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#4D47D7]">
-            Social Impact & Inclusion
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
-            Empowering Underprivileged Communities Through Accessible Technology
+      {/* 4. Pre-Footer Call to Action */}
+      <section className="py-16 sm:py-20 bg-slate-900 text-white text-center">
+        <div className="max-w-4xl mx-auto px-4 space-y-6">
+          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+            Want to Achieve Similar Results for Your Business?
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-            With a strong foundation in fintech and a diverse service portfolio—including web and software development, digital marketing, SEO, social media management, and graphics design—we cater to businesses aiming to digitize operations, scale efficiently, and reach wider audiences.
-          </p>
-
-          <div className="space-y-3 pt-2">
-            {[
-              "Affordable digital tools tailored for small businesses with limited budgets",
-              "Ethical pricing models with zero hidden retainers or vendor lock-in",
-              "Offshore staff enablement offering sustainable tech careers in developing markets",
-              "Community-centric software solutions that elevate public welfare and transparency",
-            ].map((pt, pIdx) => (
-              <div key={pIdx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700 font-medium">
-                <CheckCircle2 size={16} className="text-[#4D47D7] flex-shrink-0 mt-0.5" />
-                <span>{pt}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="lg:col-span-5 p-8 rounded-2xl bg-gradient-to-br from-white via-indigo-50/60 to-purple-50/40 border border-slate-200/90 space-y-5 shadow-md">
-          <div className="w-12 h-12 rounded-2xl bg-[#4D47D7]/10 text-[#4D47D7] border border-[#4D47D7]/20 flex items-center justify-center font-bold">
-            <HeartHandshake size={24} />
-          </div>
-          <h3 className="text-xl font-black text-slate-900">
-            Ethical Technology Partnership
-          </h3>
-          <p className="text-xs text-slate-600 leading-relaxed font-normal">
-            Align your digital transformation with social accountability, transparent governance, and sustainable engineering practices.
+          <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto font-normal">
+            Schedule a 30-minute consultation with our engineering architects to map your technical roadmap.
           </p>
           <div className="pt-2">
             <Link
               href="/contact"
-              className="btn-purple-primary inline-flex items-center gap-2.5 w-full justify-center text-xs font-bold"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold text-white bg-gradient-to-r from-[#7C3AED] to-[#2563EB] hover:opacity-95 shadow-lg transition-all"
             >
-              <span>Explore Partnership Opportunities</span>
-              <ArrowRight size={14} />
+              <span>Schedule Strategy Call</span>
+              <ArrowRight size={15} />
             </Link>
           </div>
         </div>

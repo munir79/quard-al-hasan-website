@@ -1,210 +1,239 @@
 import Link from "next/link";
+import RouteHeroBanner from "@/components/flairs/RouteHeroBanner";
+import { Reveal, RevealGroup, RevealItem } from "@/components/Reveal";
 import {
-  Sparkles,
   ShieldCheck,
   Target,
   ArrowRight,
-  Building,
+  Building2,
+  Award,
+  MapPin,
+  Cpu,
+  Globe2,
 } from "lucide-react";
 import { companyInfo, companyValues } from "@/data/companyData";
 
 export const metadata = {
   title: "About Us | Qardh Al Hasan Fintech Sdn. Bhd.",
   description:
-    "Learn about Qardh Al Hasan Fintech Sdn. Bhd., our vision, mission, ethical principles, and operations in Kuala Lumpur, Malaysia.",
+    "Learn about Qardh Al Hasan Fintech Sdn. Bhd., our vision, mission, ethical principles, and technology operations in Kuala Lumpur, Malaysia.",
 };
+
+const credentials = [
+  { label: "Corporate Registration", value: "Fintech Sdn. Bhd. (SSM Malaysia)" },
+  { label: "Headquarters", value: "Brickfields, Kuala Lumpur, Malaysia" },
+  { label: "Industry Focus", value: "FinTech, Software, Web & ICT Growth" },
+  { label: "Compliance Benchmark", value: "100% Shariah Compliant Architecture" },
+];
+
+// Shared styling (dark, matching the hero)
+const card =
+  "rounded-2xl bg-white/[0.03] border border-white/10 transition-[background-color,border-color,box-shadow] duration-300 hover:bg-white/[0.06] hover:border-blue-400/40 hover:shadow-[0_12px_40px_rgba(59,130,246,0.12)]";
+
+const sectionGrid = {
+  backgroundImage:
+    "linear-gradient(to right, rgba(148,163,184,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.08) 1px, transparent 1px)",
+  backgroundSize: "64px 64px",
+  maskImage: "radial-gradient(ellipse 75% 65% at 50% 45%, black 25%, transparent 100%)",
+  WebkitMaskImage: "radial-gradient(ellipse 75% 65% at 50% 45%, black 25%, transparent 100%)",
+};
+
+// 3 columns: left, rise from below, right (so the cards meet in the middle)
+const colDirection = (idx) => ["left", "up", "right"][idx % 3];
 
 export default function AboutPage() {
   return (
-    <div className="w-full space-y-12 sm:space-y-16 pb-16 overflow-hidden">
-      {/* =========================================================================
-          1. HERO BANNER: Full Clear Boardroom Image with Aesthetic Frosted Glass Overlay
-          ========================================================================= */}
-      <section className="relative w-full min-h-[460px] sm:min-h-[500px] flex items-center border-b border-slate-200 overflow-hidden group">
-        {/* Full-Bleed Clear Boardroom Background Image */}
-        <img
-          src="/images/corporate_boardroom.jpg"
-          alt="Executive Boardroom in Kuala Lumpur"
-          className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-1000"
-        />
-
-        {/* Silky Frosted Gradient: leaves image full and crystal-clear on the right, providing high-contrast readability on the left */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/20 sm:to-transparent pointer-events-none" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#4D47D7]/10 rounded-full blur-3xl pointer-events-none" />
-
-        {/* Text Container Centered Over Image */}
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 py-12">
-          <div className="max-w-2xl space-y-4 text-left bg-white/90 sm:bg-white/80 backdrop-blur-xl p-6 sm:p-10 rounded-3xl border border-white/80 shadow-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#4D47D7]/10 border border-[#4D47D7]/20 text-xs font-mono font-bold uppercase tracking-wider text-[#4D47D7]">
-              <Sparkles size={13} className="text-[#4D47D7]" />
-              <span>Identity & Heritage</span>
-            </div>
-
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-              About{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4D47D7] via-[#6366f1] to-[#0ea5e9]">
-                Our Company
-              </span>
-            </h1>
-
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
-              {companyInfo.aboutSummary}
-            </p>
-          </div>
+    <div className="w-full bg-[#0A0F1C] text-white">
+      {/* 1. Hero Banner */}
+      <RouteHeroBanner
+        badge="Identity & Ethical Heritage"
+        title="Pioneering Ethical Technology &"
+        titleHighlight="FinTech in Malaysia"
+        description={companyInfo.aboutSummary}
+        breadcrumbs={[{ label: "About Us" }]}
+        image="/images/kl_office_headquarters.jpg"
+      >
+        <div className="flex flex-wrap items-center gap-3 pt-2">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sm font-medium text-white">
+            <Building2 size={16} className="text-[#38BDF8]" />
+            Brickfields, Kuala Lumpur
+          </span>
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sm font-medium text-white">
+            <ShieldCheck size={16} className="text-emerald-400" />
+            SSM Registered Sdn. Bhd.
+          </span>
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sm font-medium text-white">
+            <Award size={16} className="text-[#60A5FA]" />
+            10+ Years Combined Expertise
+          </span>
         </div>
+      </RouteHeroBanner>
 
-        {/* Floating Badge on the bottom right */}
-        <div className="hidden md:flex absolute bottom-6 right-8 z-10 items-center gap-2 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl border border-white/80 shadow-lg text-xs font-mono">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-          <span className="text-slate-800 font-bold">Executive Boardroom</span>
-          <span className="text-[#4D47D7] font-semibold">&bull; Kuala Lumpur HQ</span>
+      {/* 2. Vision (from the left) & Mission (from the right) */}
+      <section className="relative py-16 sm:py-24 overflow-hidden">
+        <div aria-hidden className="absolute inset-0 opacity-[0.3] pointer-events-none" style={sectionGrid} />
+        <div className="absolute -top-32 right-0 h-[460px] w-[640px] rounded-full bg-blue-600/15 blur-[120px] pointer-events-none" />
+        <div className="absolute -bottom-40 -left-24 h-[420px] w-[520px] rounded-full bg-sky-500/10 blur-[110px] pointer-events-none" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {/* Vision */}
+            <Reveal from="left" className="h-full">
+              <div className={`${card} h-full p-8 sm:p-10 space-y-5`}>
+                <div className="w-14 h-14 rounded-xl bg-blue-500/10 border border-blue-400/20 text-blue-400 flex items-center justify-center">
+                  <Target size={26} />
+                </div>
+                <div className="text-sm font-semibold text-blue-400 uppercase tracking-widest">
+                  Strategic Vision
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white leading-snug">
+                  Leading Ethical FinTech in ASEAN
+                </h3>
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                  {companyInfo.vision}
+                </p>
+              </div>
+            </Reveal>
+
+            {/* Mission */}
+            <Reveal from="right" className="h-full">
+              <div className={`${card} h-full p-8 sm:p-10 space-y-5`}>
+                <div className="w-14 h-14 rounded-xl bg-sky-500/10 border border-sky-400/20 text-sky-400 flex items-center justify-center">
+                  <Cpu size={26} />
+                </div>
+                <div className="text-sm font-semibold text-sky-400 uppercase tracking-widest">
+                  Corporate Mission
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white leading-snug">
+                  Empowering Scalable Business Success
+                </h3>
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                  {companyInfo.mission}
+                </p>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
-      {/* =========================================================================
-          CENTERED PAGE CONTENT
-          ========================================================================= */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-16">
-        {/* 2. Vision & Mission Grid */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
-          <div className="bg-gradient-to-br from-indigo-50/70 via-white to-purple-50/40 p-6 sm:p-8 rounded-3xl border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-[#4D47D7]/40 hover:shadow-xl transition-all">
-            <div className="space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-[#4D47D7]/10 text-[#4D47D7] border border-[#4D47D7]/20 flex items-center justify-center">
-                <Sparkles size={20} />
+      {/* 3. Core Values */}
+      <section className="relative py-16 sm:py-24 border-t border-white/10 overflow-hidden">
+        <div aria-hidden className="absolute inset-0 opacity-[0.25] pointer-events-none" style={sectionGrid} />
+        <div className="absolute -top-32 left-0 h-[420px] w-[600px] rounded-full bg-blue-600/10 blur-[120px] pointer-events-none" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <RevealGroup className="max-w-3xl space-y-4 mb-12 sm:mb-16">
+            <RevealItem from="left">
+              <div className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 uppercase tracking-widest">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                Guiding Principles
               </div>
-              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#4D47D7] block">
-                Strategic Vision
-              </span>
-              <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
-                Our Vision
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                {companyInfo.vision}
-              </p>
-            </div>
-            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-500">
-              <span>Location: Malaysia</span>
-              <span className="text-[#4D47D7] font-bold">Value-Driven</span>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-br from-purple-50/70 via-white to-indigo-50/40 p-6 sm:p-8 rounded-3xl border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-[#4D47D7]/40 hover:shadow-xl transition-all">
-            <div className="space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-[#4D47D7]/10 text-[#4D47D7] border border-[#4D47D7]/20 flex items-center justify-center">
-                <Target size={20} />
-              </div>
-              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#4D47D7] block">
-                Execution
-              </span>
-              <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
-                Our Mission
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                {companyInfo.mission}
-              </p>
-            </div>
-            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-500">
-              <span>Focus: Startups & Enterprise</span>
-              <span className="text-[#4D47D7] font-bold">Continuous Support</span>
-            </div>
-          </div>
-        </section>
-
-        {/* 3. Operations Hub: Side-by-Side Flex Layout with Cool Gradient */}
-        <section className="bg-gradient-to-br from-slate-50 via-indigo-50/40 to-purple-50/30 p-6 sm:p-10 rounded-3xl border border-slate-200/90 shadow-md relative overflow-hidden">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            {/* Left Text */}
-            <div className="flex-1 text-left space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#4D47D7]/10 border border-[#4D47D7]/20 text-xs font-mono font-bold text-[#4D47D7]">
-                <Building size={13} className="text-[#4D47D7]" />
-                <span>Technology Operations Base</span>
-              </div>
-
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-                Kuala Lumpur Operations Center
-              </h2>
-
-              <p className="text-sm text-slate-600 leading-relaxed font-normal max-w-lg">
-                Strategically based in Brickfields, Kuala Lumpur, our engineering facility houses high-speed server clusters, continuous deployment desks, and client collaboration suites.
-              </p>
-
-              <div className="flex flex-wrap gap-2 pt-1">
-                <span className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 shadow-xs">
-                  Certified Infrastructure
+            </RevealItem>
+            <RevealItem from="left">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+                Our Core{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#38BDF8] via-[#3B82F6] to-[#60A5FA]">
+                  Values
                 </span>
-                <span className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 shadow-xs">
-                  24/7 Monitoring & Support
-                </span>
-              </div>
-            </div>
+              </h2>
+            </RevealItem>
+            <RevealItem from="left">
+              <p className="text-base sm:text-lg text-slate-400 leading-relaxed">
+                Every system we write, audit, and deploy reflects our dedication to ethical accountability and engineering excellence.
+              </p>
+            </RevealItem>
+          </RevealGroup>
 
-            {/* Right Scaled-Down Image with High-Definition Frame */}
-            <div className="w-full max-w-sm lg:w-[380px] shrink-0 mx-auto lg:mx-0">
-              <div className="rounded-2xl overflow-hidden border border-slate-200 aspect-[16/11] bg-slate-100 shadow-md p-1 bg-white">
-                <img
-                  src="/images/hero_fintech_desk.jpg"
-                  alt="Technology Operations Hub in Kuala Lumpur"
-                  className="w-full h-full object-cover rounded-xl"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 4. Values Section */}
-        <section className="space-y-6">
-          <div className="text-center max-w-xl mx-auto space-y-2">
-            <span className="text-[11px] font-mono uppercase tracking-wider text-[#4D47D7] font-bold">
-              Core Beliefs
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
-              Ethical Values & Innovation
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
-              Guiding every software platform, web architecture, and client collaboration.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {companyValues.map((val) => (
-              <div
-                key={val.title}
-                className="purple-card p-5 rounded-2xl border border-slate-200 bg-white shadow-sm hover:border-[#4D47D7]/30 transition-all"
-              >
-                <div className="w-9 h-9 rounded-xl bg-[#4D47D7]/10 text-[#4D47D7] border border-[#4D47D7]/20 flex items-center justify-center mb-4">
-                  <ShieldCheck size={18} />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {companyValues.map((val, idx) => (
+              <Reveal key={idx} from={colDirection(idx)} className="h-full">
+                <div className={`${card} h-full p-8 space-y-4`}>
+                  <span className="inline-block px-3 py-1.5 rounded-full text-xs font-semibold text-blue-300 bg-blue-500/10 border border-blue-400/20">
+                    {val.badge}
+                  </span>
+                  <h3 className="text-2xl font-bold text-white leading-snug">{val.title}</h3>
+                  <p className="text-base text-slate-300 leading-relaxed">{val.description}</p>
                 </div>
-                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#4D47D7] px-2 py-0.5 rounded-full bg-[#4D47D7]/10 border border-[#4D47D7]/20 inline-block mb-2">
-                  {val.badge}
-                </span>
-                <h3 className="text-base font-bold text-slate-900 mb-2">{val.title}</h3>
-                <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                  {val.description}
-                </p>
-              </div>
+              </Reveal>
             ))}
           </div>
-        </section>
 
-        {/* 5. High Impact Startup CTA Box */}
-        <section className="text-center p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-[#4D47D7] via-[#5A54EA] to-[#3E38CE] text-white space-y-4 shadow-xl shadow-[#4D47D7]/20">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-            Partner with an Ethical & Proven IT Innovator
-          </h2>
-          <p className="text-xs sm:text-sm text-indigo-100 max-w-lg mx-auto font-normal">
-            Contact our team in Brickfields, Kuala Lumpur, Malaysia to explore tailored web, software, and fintech solutions.
-          </p>
-          <div className="pt-2">
+          <Reveal from="up" className="mt-12 text-center">
             <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-slate-50 text-[#4D47D7] font-bold text-sm transition-all shadow-md"
+              href="/why-us"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-base font-semibold text-white bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 transition-colors"
             >
-              <span>Get in Touch with Us</span>
-              <ArrowRight size={14} />
+              <span>Explore The Qardh Al Hasan Edge</span>
+              <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" />
             </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 4. Headquarters & Governance (text from the left, card from the right) */}
+      <section className="relative py-16 sm:py-24 border-t border-white/10 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1C] via-[#0D1730] to-[#0A0F1C] pointer-events-none" />
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 h-[420px] w-[620px] rounded-full bg-blue-600/15 blur-[120px] pointer-events-none" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <RevealGroup className="lg:col-span-7 space-y-5">
+              <RevealItem from="left">
+                <div className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 uppercase tracking-widest">
+                  <MapPin size={16} />
+                  <span>Malaysian Operations & Headquarters</span>
+                </div>
+              </RevealItem>
+              <RevealItem from="left">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                  Operating from the Heart of Kuala Lumpur
+                </h2>
+              </RevealItem>
+              <RevealItem from="left">
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                  Located in Brickfields, Kuala Lumpur, Qardh Al Hasan Fintech Sdn. Bhd. acts as an innovation bridge connecting regional enterprises, Islamic microfinance entities, and SMEs with modern cloud computing.
+                </p>
+              </RevealItem>
+
+              <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {credentials.map((cred, idx) => (
+                  <RevealItem key={idx} from="left">
+                    <div className="h-full p-5 rounded-xl bg-white/[0.04] border border-white/10">
+                      <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                        {cred.label}
+                      </div>
+                      <div className="text-base font-semibold text-white mt-1.5 leading-snug">
+                        {cred.value}
+                      </div>
+                    </div>
+                  </RevealItem>
+                ))}
+              </div>
+            </RevealGroup>
+
+            <Reveal from="right" className="lg:col-span-5">
+              <div className={`${card} p-8 sm:p-10 space-y-5 text-center`}>
+                <div className="w-16 h-16 mx-auto rounded-2xl bg-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-600/25">
+                  <Globe2 size={32} />
+                </div>
+                <h3 className="text-2xl font-bold text-white">Global Standards, Local Feel</h3>
+                <p className="text-base text-slate-300 leading-relaxed">
+                  Direct phone lines, face-to-face consultations in Kuala Lumpur, and transparent delivery SLAs.
+                </p>
+                <div className="pt-2">
+                  <Link
+                    href="/contact"
+                    className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-base font-semibold text-white bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/25 transition-colors"
+                  >
+                    <span>Connect with Our Leadership</span>
+                    <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </div>
+            </Reveal>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   );
 }

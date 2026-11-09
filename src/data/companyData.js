@@ -231,49 +231,68 @@ export const leadershipData = [
   },
 ];
 
+// Paste this over `teamMembersData` in data/companyData.js
+// Put the photos in /public/images/team/ using the file names below (or change the paths).
+// Best photos: portrait (3:4), face near the top, at least 800px wide, .jpg or .webp.
+
 export const teamMembersData = [
-  {
-    name: "Nirob",
-    role: "General Manager",
-    department: "Operations & Management",
-    description: "Overseeing day-to-day organizational execution, client delivery timelines, and multi-disciplinary team coordination.",
-    skills: ["Operations", "Client Relations", "Team Leadership"],
-  },
+ 
+ 
   {
     name: "Turzo",
     role: "Digital Marketing (SEO Specialist)",
     department: "Growth & Marketing",
-    description: "Campaign execution, SMM strategies, paid ad conversion optimization, and analytics reporting.",
-    skills: ["SEO","Google Ads", "SMM", "Copywriting", "Funnel Design"],
+    image: "/images/team/turzo.jpg",
+    description:
+      "Campaign execution, SMM strategies, paid ad conversion optimization, and analytics reporting.",
+    skills: ["SEO", "Google Ads", "SMM", "Copywriting", "Funnel Design"],
   },
-  {
+     {
     name: "Jakir Hossain Munir",
     role: "Software Developer",
-    department: " Software Engineering",
-    description: "Backend architecture, enterprise API development, database optimization, and custom software systems.",
-    skills: ["Javascript", "Node js", "Next js", "Database Architecture"],
+    department: "Software Engineering",
+    image: "/images/team/munir.jpeg",
+    description:
+      "Backend architecture, enterprise API development, database optimization, and custom software systems.",
+    skills: ["JavaScript", "Node.js", "Next.js", "Database Architecture"],
   },
+   {
+    name: "Nirob",
+    role: "General Manager",
+    department: "Operations & Management",
+    image: "/images/team/nirob.jpg",
+    description:
+      "Overseeing day-to-day organizational execution, client delivery timelines, and multi-disciplinary team coordination.",
+    skills: ["Operations", "Client Relations", "Team Leadership"],
+  },
+
   {
     name: "Alif",
     role: "Web Developer",
     department: "Web Technologies",
-    description: "Front-end engineering, responsive user interfaces, React/Next.js implementations, and web performance.",
+    image: "/images/team/alif.jpg",
+    description:
+      "Front-end engineering, responsive user interfaces, React/Next.js implementations, and web performance.",
     skills: ["React", "JavaScript", "Tailwind CSS", "WordPress"],
   },
   {
     name: "Rafi",
     role: "Digital Marketing Specialist",
     department: "Growth & Marketing",
-    description: "Campaign execution, SMM strategies, paid ad conversion optimization, and analytics reporting.",
+    image: "/images/team/rafi.jpg",
+    description:
+      "Campaign execution, SMM strategies, paid ad conversion optimization, and analytics reporting.",
     skills: ["Google Ads", "SMM", "Copywriting", "Funnel Design"],
   },
- {
-  name: "Shakib",
-  role: "WordPress Developer",
-  department: "Engineering",
-  description: "WordPress website development, theme customization, plugin integration, performance optimization, and website maintenance.",
-  skills: ["WordPress", "PHP", "WooCommerce", "MySQL", "Elementor"],
-},
+  {
+    name: "Shakib",
+    role: "WordPress Developer",
+    department: "Engineering",
+    image: "/images/team/shakib.jpg",
+    description:
+      "WordPress website development, theme customization, plugin integration, performance optimization, and website maintenance.",
+    skills: ["WordPress", "PHP", "WooCommerce", "MySQL", "Elementor"],
+  },
 ];
 
 export const targetMarketData = [

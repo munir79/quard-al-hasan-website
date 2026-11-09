@@ -1,212 +1,238 @@
-import { Phone, Mail, MapPin, Clock, MessageSquare, Sparkles, Globe } from "lucide-react";
+import RouteHeroBanner from "@/components/flairs/RouteHeroBanner";
+import { Reveal, RevealGroup, RevealItem } from "@/components/Reveal";
+import { Phone, Mail, MapPin, Clock, MessageSquare, ShieldCheck } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import { companyInfo } from "@/data/companyData";
 
 export const metadata = {
-  title: "Contact Us | Qardh Al Hasan Fintech Sdn. Bhd.",
+  title: "Contact Us & Schedule a Call | Qardh Al Hasan Fintech Sdn. Bhd.",
   description:
-    "Get in touch with Qardh Al Hasan Fintech in Kuala Lumpur, Malaysia. Phone: +60 17 894 7597 / +60 017 847 3033, Email: qardhalhasanfintech@gmail.com.",
+    "Schedule a consultation with Qardh Al Hasan Fintech in Brickfields, Kuala Lumpur, Malaysia. Phone: +60 17 894 7597 / +60 017 847 3033, Email: qardhalhasanfintech@gmail.com.",
 };
 
-const faqs = [
+const contactFaqs = [
   {
-    q: "How does Qardh Al Hasan Fintech structure project engagements?",
-    a: "We offer flexible models tailored to client needs: fixed-price milestone delivery for well-defined MVPs and platforms, or dedicated offshore agile squads on monthly retainer for continuous software development and support.",
+    q: "How fast can our project begin after our initial call?",
+    a: "Following our initial discovery and architecture roadmap session, most projects start sprint execution within 3 to 5 business days.",
   },
   {
-    q: "Are your developers certified and experienced?",
-    a: "Yes. Our team brings over a decade of collective experience across modern web (React, Next.js, Node.js), custom software engineering, and fintech systems.",
+    q: "Can we sign a Non-Disclosure Agreement (NDA) before sharing details?",
+    a: "Absolutely. We are pleased to execute a standard mutual NDA prior to discussing your proprietary product specifications.",
   },
   {
-    q: "Can you assist international clients with offshore teams?",
-    a: "Absolutely. We currently manage offshore development squads for international businesses, providing transparent reporting, time-zone overlap, and English-speaking project managers.",
+    q: "How does Qardh Al Hasan structure payment milestones?",
+    a: "We use transparent milestone schedules tied directly to deliverable verification (e.g. 30% upfront kickoff, 40% demo staging release, 30% final sign-off & code handover).",
   },
   {
-    q: "How fast can we begin our project after signing?",
-    a: "Most projects initiate within 3 to 5 business days following technical discovery and requirement sign-off.",
+    q: "Do you offer in-person consultations in Kuala Lumpur?",
+    a: "Yes. Our team can host you at our Brickfields office or arrange an on-site strategy session at your Malaysian corporate office.",
   },
 ];
 
+// Shared dark-glass styling
+const glassCard =
+  "relative overflow-hidden rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/[0.12] shadow-[0_8px_30px_rgba(2,6,23,0.35),inset_0_1px_0_rgba(255,255,255,0.10)] transition-[background-color,border-color] duration-300 hover:bg-white/[0.08] hover:border-blue-400/30";
+
+const sectionGrid = {
+  backgroundImage:
+    "linear-gradient(to right, rgba(148,163,184,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.08) 1px, transparent 1px)",
+  backgroundSize: "64px 64px",
+  maskImage: "radial-gradient(ellipse 75% 65% at 50% 45%, black 25%, transparent 100%)",
+  WebkitMaskImage: "radial-gradient(ellipse 75% 65% at 50% 45%, black 25%, transparent 100%)",
+};
+
 export default function ContactPage() {
   return (
-    <div className="py-10 sm:py-16 space-y-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {/* =========================================================================
-          1. HERO SECTION: Full Clear Panoramic Boardroom Image with Frosted Glass Overlay
-          ========================================================================= */}
-      <section className="relative rounded-3xl overflow-hidden min-h-[480px] sm:min-h-[520px] flex items-center p-6 sm:p-12 lg:p-14 border border-slate-200/90 shadow-2xl group">
-        {/* Full-Bleed Clear Background Image */}
-        <img
-          src="/images/corporate_boardroom.jpg"
-          alt="Qardh Al Hasan Corporate Operations Headquarters in Brickfields, Kuala Lumpur"
-          className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-1000"
-        />
-
-        {/* Silky Frosted Gradient: leaves the image full and crystal-clear on the right, providing high-contrast readability on the left */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/20 sm:to-transparent pointer-events-none" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#4D47D7]/10 rounded-full blur-3xl pointer-events-none" />
-
-        {/* Content on Aesthetic Frosted Glass Card Area */}
-        <div className="relative z-10 max-w-2xl space-y-5 bg-white/90 sm:bg-white/80 backdrop-blur-xl p-6 sm:p-10 rounded-3xl border border-white/80 shadow-2xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#4D47D7]/10 border border-[#4D47D7]/20 text-xs font-bold text-[#4D47D7]">
-            <MessageSquare size={14} className="text-[#4D47D7]" />
-            <span>Brickfields, Kuala Lumpur Operations</span>
-          </div>
-
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-            Contact{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4D47D7] to-[#706bf5]">
-              Information
-            </span>
-          </h1>
-
-          <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
-            We are excited to explore strategic collaboration with you. For more information about our products, software solutions, or offshore team engagements, please connect directly with our engineering advisory desk.
-          </p>
-
-          <div className="flex flex-wrap gap-2.5 pt-1">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/90 border border-slate-200 text-xs font-bold text-slate-800 shadow-xs">
-              <Clock size={14} className="text-[#4D47D7]" />
-              24h Response SLA
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/90 border border-slate-200 text-xs font-bold text-slate-800 shadow-xs">
-              <MapPin size={14} className="text-[#4D47D7]" />
-              Kuala Lumpur HQ
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/90 border border-slate-200 text-xs font-bold text-slate-800 shadow-xs">
-              <Globe size={14} className="text-[#4D47D7]" />
-              Global Clients Welcome
-            </span>
-          </div>
-        </div>
-
-        {/* Floating Live Badge on the bottom-right corner of the clear photo */}
-        <div className="hidden md:flex absolute bottom-6 right-6 z-10 items-center gap-2 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl border border-white/80 shadow-lg text-xs font-mono">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-          <span className="text-slate-800 font-bold">Kuala Lumpur Headquarters</span>
-          <span className="text-[#4D47D7] font-semibold">&bull; Brickfields</span>
-        </div>
-      </section>
-
-      {/* Main Contact Grid */}
-      <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-        {/* Left Column: Direct Info Cards */}
-        <div className="lg:col-span-5 space-y-5">
-          {/* Direct Phone Card */}
-          <a
-            href={`tel:${companyInfo.phoneRaw}`}
-            className="flex items-start gap-4 p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[#4D47D7]/40 group transition-all"
-          >
-            <div className="w-12 h-12 rounded-2xl bg-[#4D47D7]/10 text-[#4D47D7] border border-[#4D47D7]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#4D47D7] group-hover:text-white transition-all shadow-sm">
-              <Phone size={22} />
-            </div>
-            <div>
-              <span className="text-xs font-black uppercase tracking-wider text-slate-500">
-                Direct Telephones
-              </span>
-              <h3 className="text-lg font-black text-slate-900 group-hover:text-[#4D47D7] transition-colors mt-0.5">
-                {companyInfo.phone}
-              </h3>
-              <p className="text-sm font-semibold text-slate-700">
-                {companyInfo.phoneSecondary}
-              </p>
-              <p className="text-xs text-slate-500 font-medium mt-1">
-                Mon - Fri, 9:00 AM - 6:00 PM (GMT+8 Malaysia)
-              </p>
-            </div>
-          </a>
-
-          {/* Email Card */}
-          <a
-            href={`mailto:${companyInfo.email}`}
-            className="flex items-start gap-4 p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[#4D47D7]/40 group transition-all"
-          >
-            <div className="w-12 h-12 rounded-2xl bg-[#4D47D7]/10 text-[#4D47D7] border border-[#4D47D7]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#4D47D7] group-hover:text-white transition-all shadow-sm">
-              <Mail size={22} />
-            </div>
-            <div className="truncate">
-              <span className="text-xs font-black uppercase tracking-wider text-slate-500">
-                Official Inquiries
-              </span>
-              <h3 className="text-base sm:text-lg font-black text-slate-900 group-hover:text-[#4D47D7] transition-colors mt-0.5 truncate">
-                {companyInfo.email}
-              </h3>
-              <p className="text-xs text-slate-500 font-medium mt-1">
-                Typical reply turnaround within 24 hours
-              </p>
-            </div>
-          </a>
-
-          {/* Office Location Card */}
-          <div className="flex items-start gap-4 p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm">
-            <div className="w-12 h-12 rounded-2xl bg-slate-100 text-[#4D47D7] border border-slate-200 flex items-center justify-center flex-shrink-0">
-              <MapPin size={22} />
-            </div>
-            <div>
-              <span className="text-xs font-black uppercase tracking-wider text-slate-500">
-                Corporate Headquarters
-              </span>
-              <h3 className="text-sm sm:text-base font-black text-slate-900 mt-0.5 leading-snug">
-                {companyInfo.address}
-              </h3>
-              <p className="text-xs text-[#4D47D7] font-mono mt-1 font-bold">
-                {companyInfo.name}
-              </p>
-            </div>
-          </div>
-
-          {/* WhatsApp Direct Action */}
-          <div className="p-6 rounded-3xl bg-gradient-to-br from-indigo-50/80 via-white to-purple-50/60 border border-slate-200 space-y-3 shadow-md">
-            <div className="flex items-center gap-2 text-[#4D47D7] font-black text-xs uppercase tracking-wider">
-              <Sparkles size={14} />
-              <span>Instant Messenger Desk</span>
-            </div>
-            <h4 className="text-lg font-black text-slate-900">
-              Prefer to Chat on WhatsApp?
-            </h4>
-            <p className="text-xs text-slate-600 leading-relaxed font-normal">
-              Connect directly with our solutions representative on WhatsApp for quick technical scoping and inquiries.
-            </p>
-            <a
-              href="https://wa.me/60178947597?text=Hi%20Qardh%20Al%20Hasan%20Fintech%2C%20I%20would%20like%20to%20discuss%20a%20project"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-purple-primary inline-flex items-center gap-2 text-xs font-black"
-            >
-              <MessageSquare size={14} />
-              <span>Launch WhatsApp Chat</span>
-            </a>
-          </div>
-        </div>
-
-        {/* Right Column: Interactive Consultation Form */}
-        <div className="lg:col-span-7">
-          <ContactForm />
-        </div>
-      </section>
-
-      {/* Frequently Asked Questions */}
-      <section className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200/90 shadow-xl space-y-8">
-        <div className="text-center max-w-2xl mx-auto space-y-3">
-          <span className="text-xs font-black uppercase tracking-wider text-[#4D47D7]">
-            Common Inquiries
+    <div className="w-full bg-[#0A0F1C] text-white">
+      {/* 1. Hero Banner */}
+      <RouteHeroBanner
+        badge="Direct Enterprise Engagement"
+        badgeIcon={MessageSquare}
+        title="Let's Build Something"
+        titleHighlight="Exceptional Together."
+        description="Whether you need to architect a Shariah fintech platform, modernise enterprise software, or build high-speed web apps, schedule a strategy consultation with our technical architects."
+        breadcrumbs={[{ label: "Contact Us" }]}
+        image="/images/kl_office_headquarters.jpg"
+      >
+        <div className="flex flex-wrap items-center gap-3 pt-3 text-xs font-mono">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-slate-200 font-semibold">
+            <Clock size={14} className="text-[#38BDF8]" />
+            Fast Response &bull; Under 2 Hours
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
-            Frequently Asked Questions
-          </h2>
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-slate-200 font-semibold">
+            <MapPin size={14} className="text-emerald-400" />
+            Brickfields, Kuala Lumpur Office
+          </span>
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-slate-200 font-semibold">
+            <ShieldCheck size={14} className="text-[#60A5FA]" />
+            Mutual NDA Prior to Kickoff
+          </span>
         </div>
+      </RouteHeroBanner>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-          {faqs.map((faq, idx) => (
-            <div
-              key={idx}
-              className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 hover:border-[#4D47D7]/40 transition-colors"
-            >
-              <h3 className="text-base font-black text-slate-900">{faq.q}</h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                {faq.a}
-              </p>
-            </div>
-          ))}
+      {/* 2. Contact details (slides from the left) + form (slides from the right) */}
+      <section className="relative py-16 sm:py-24 overflow-hidden">
+        <div aria-hidden className="absolute inset-0 opacity-[0.3] pointer-events-none" style={sectionGrid} />
+        <div className="absolute -top-32 right-0 h-[460px] w-[640px] rounded-full bg-blue-600/15 blur-[120px] pointer-events-none" />
+        <div className="absolute -bottom-40 -left-24 h-[420px] w-[520px] rounded-full bg-sky-500/10 blur-[110px] pointer-events-none" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            {/* Left Column */}
+            <RevealGroup className="lg:col-span-5 space-y-8">
+              <RevealItem from="left" className="space-y-3">
+                <span className="text-xs font-mono font-bold text-blue-400 uppercase tracking-widest">
+                  Kuala Lumpur Headquarters
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-black text-white">
+                  Direct Channels & Location
+                </h2>
+                <p className="text-sm text-slate-400 leading-relaxed font-normal">
+                  Reach our team directly by phone, email, WhatsApp, or schedule an in-person meeting at our Brickfields office.
+                </p>
+              </RevealItem>
+
+              <div className="space-y-4">
+                {/* Address */}
+                <RevealItem from="left">
+                  <div className={`${glassCard} p-5 flex items-start gap-4`}>
+                    <div className="p-3 rounded-xl bg-blue-400/10 border border-blue-300/20 text-blue-300 shrink-0">
+                      <MapPin size={20} />
+                    </div>
+                    <div className="space-y-1">
+                      <div className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider">
+                        HQ Address
+                      </div>
+                      <div className="text-sm font-bold text-white">{companyInfo.address}</div>
+                      <div className="text-xs text-slate-400">
+                        Brickfields &bull; Kuala Lumpur, Malaysia
+                      </div>
+                    </div>
+                  </div>
+                </RevealItem>
+
+                {/* Phone */}
+                <RevealItem from="left">
+                  <div className={`${glassCard} p-5 flex items-start gap-4`}>
+                    <div className="p-3 rounded-xl bg-sky-400/10 border border-sky-300/20 text-sky-300 shrink-0">
+                      <Phone size={20} />
+                    </div>
+                    <div className="space-y-1">
+                      <div className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider">
+                        Direct Phone Lines
+                      </div>
+                      <div className="text-sm font-bold text-white">
+                        <a href="tel:+60178947597" className="hover:text-blue-300 transition-colors">
+                          {companyInfo.phone}
+                        </a>
+                      </div>
+                      <div className="text-xs text-slate-400">
+                        Secondary:{" "}
+                        <a href="tel:+600178473033" className="hover:text-blue-300 transition-colors">
+                          {companyInfo.phoneSecondary}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </RevealItem>
+
+                {/* Email */}
+                <RevealItem from="left">
+                  <div className={`${glassCard} p-5 flex items-start gap-4`}>
+                    <div className="p-3 rounded-xl bg-indigo-400/10 border border-indigo-300/20 text-indigo-300 shrink-0">
+                      <Mail size={20} />
+                    </div>
+                    <div className="space-y-1">
+                      <div className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider">
+                        Corporate Email
+                      </div>
+                      <div className="text-sm font-bold text-white break-all">
+                        <a
+                          href={`mailto:${companyInfo.email}`}
+                          className="hover:text-blue-300 transition-colors"
+                        >
+                          {companyInfo.email}
+                        </a>
+                      </div>
+                      <div className="text-xs text-slate-400">
+                        Inquiries answered within 15 minutes
+                      </div>
+                    </div>
+                  </div>
+                </RevealItem>
+
+                {/* WhatsApp */}
+                <RevealItem from="left">
+                  <div className="relative overflow-hidden rounded-2xl p-5 flex items-center justify-between gap-3 bg-emerald-400/[0.08] backdrop-blur-xl border border-emerald-300/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.10)]">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2.5 rounded-xl bg-emerald-500 text-white">
+                        <MessageSquare size={18} />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-emerald-100">WhatsApp Quick Lane</div>
+                        <div className="text-[11px] text-emerald-200/70">
+                          Direct chat with our tech advisors
+                        </div>
+                      </div>
+                    </div>
+                    <a
+                      href="https://wa.me/60178947597"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 rounded-full text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-500 transition-colors shrink-0"
+                    >
+                      Chat Now
+                    </a>
+                  </div>
+                </RevealItem>
+              </div>
+
+              <RevealItem from="left" className="pt-2 text-xs text-slate-400 flex items-center gap-2">
+                <Clock size={14} className="text-slate-500" />
+                <span>Monday &ndash; Friday: 9:00 AM &ndash; 6:00 PM (MYT / UTC+8)</span>
+              </RevealItem>
+            </RevealGroup>
+
+            {/* Right Column: form slides in from the right */}
+            <Reveal from="right" className="lg:col-span-7">
+              <ContactForm />
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Pre-Sales FAQ (cards alternate left / right) */}
+      <section className="relative py-16 sm:py-24 border-t border-white/10 overflow-hidden">
+        <div aria-hidden className="absolute inset-0 opacity-[0.25] pointer-events-none" style={sectionGrid} />
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 h-[360px] w-[720px] rounded-full bg-blue-600/10 blur-[120px] pointer-events-none" />
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <RevealGroup className="text-center space-y-3">
+            <RevealItem from="left">
+              <span className="text-xs font-mono font-bold text-blue-400 uppercase tracking-widest">
+                Quick Answers
+              </span>
+            </RevealItem>
+            <RevealItem from="right">
+              <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+                Pre-Engagement Questions
+              </h2>
+            </RevealItem>
+          </RevealGroup>
+
+          <div className="space-y-4">
+            {contactFaqs.map((faq, idx) => (
+              <Reveal key={idx} from={idx % 2 === 0 ? "left" : "right"}>
+                <div className={`${glassCard} p-6 space-y-2`}>
+                  <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/[0.05] to-transparent" />
+                  <h3 className="relative text-base font-bold text-white">{faq.q}</h3>
+                  <p className="relative text-sm text-slate-400 leading-relaxed font-normal">
+                    {faq.a}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
     </div>

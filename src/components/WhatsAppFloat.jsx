@@ -1,27 +1,49 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MessageSquare, X, Send, Sparkles } from "lucide-react";
 import { companyInfo } from "@/data/companyData";
 
 export default function WhatsAppFloat() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Show floating WhatsApp button only after user scrolls down
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 120) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const whatsappUrl = `https://wa.me/60178947597?text=Hi%20Qardh%20Al%20Hasan%20Fintech%2C%20I%20would%20like%20to%20discuss%20a%20project`;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div
+      className={`fixed bottom-6 right-6 z-50 flex flex-col items-end transition-all duration-300 ${
+        isVisible || isOpen
+          ? "opacity-100 translate-y-0 pointer-events-auto"
+          : "opacity-0 translate-y-8 pointer-events-none"
+      }`}
+    >
       {/* Expandable Chat Popup */}
       {isOpen && (
         <div className="mb-3 w-80 sm:w-96 rounded-2xl bg-white border border-slate-200 shadow-2xl overflow-hidden animate-fade-in text-slate-900">
           {/* Header */}
-          <div className="bg-gradient-to-r from-[#4D47D7] via-[#5c56e8] to-[#6e68f3] p-4 flex items-center justify-between text-white">
+          <div className="bg-logo-gradient p-4 flex items-center justify-between text-white">
             <div className="flex items-center gap-3">
               <div className="relative">
                 <div className="w-10 h-10 rounded-full bg-white/20 border border-white/30 flex items-center justify-center text-white">
                   <WhatsAppIcon className="w-5 h-5 fill-current" />
                 </div>
-                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 ring-2 ring-[#4D47D7]" />
+                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 ring-2 ring-primary" />
               </div>
               <div>
                 <h4 className="text-sm font-bold text-white flex items-center gap-1.5">
@@ -81,24 +103,16 @@ export default function WhatsAppFloat() {
       )}
 
       {/* Main Floating Trigger Button */}
-      <div className="flex items-center gap-2">
-        {!isOpen && (
-          <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-slate-800 text-xs font-semibold border border-slate-200 shadow-xl animate-fade-in pointer-events-none">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-            Chat with us
-          </span>
-        )}
-
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className={`relative flex items-center justify-center w-14 h-14 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 group ${
-            isOpen
-              ? "bg-[#4D47D7] text-white border border-[#4D47D7]/40 shadow-indigo-500/30"
-              : "bg-[#25D366] hover:bg-[#20ba59] text-white shadow-emerald-500/30"
-          }`}
-          title="Chat with us on WhatsApp"
-          aria-label="Toggle WhatsApp chat widget"
-        >
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={`relative flex items-center justify-center w-14 h-14 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 group ${
+          isOpen
+            ? "bg-[#4D47D7] text-white border border-[#4D47D7]/40 shadow-indigo-500/30"
+            : "bg-[#25D366] hover:bg-[#20ba59] text-white shadow-emerald-500/30"
+        }`}
+        title="Chat with us on WhatsApp"
+        aria-label="Toggle WhatsApp chat widget"
+      >
           {!isOpen && (
             <>
               {/* Subtle Pulsing Ring */}
@@ -116,7 +130,6 @@ export default function WhatsAppFloat() {
             <WhatsAppIcon className="w-7 h-7 fill-white drop-shadow-md" />
           )}
         </button>
-      </div>
     </div>
   );
 }

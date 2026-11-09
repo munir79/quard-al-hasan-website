@@ -1,231 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ==========================================================================
-   QARDH AL HASAN FINTECH - AI STARTUP LIGHT THEME
-   --------------------------------------------------------------------------
-   - Background: Pure Crisp White (#ffffff / #f8fafc)
-   - Primary: Electric Indigo & Official Logo Color (#4D47D7)
-   - Secondary / Accent: Tech Violet & Electric Blue (#6366F1, #0EA5E9)
-   - Surfaces: Ultra-clean white cards with refined borders and soft shadows
-   - Aesthetic: Modern AI & Fintech Startup (Stripe / Linear / OpenAI vibe)
-   ========================================================================== */
-
 :root {
-  /* Brand Palette Variables */
-  --brand-bg: #ffffff;
-  --brand-surface: #f8fafc;
-  --brand-card: #ffffff;
-  --brand-card-hover: #fbfbfe;
-  --brand-border: #e2e8f0;
-  --brand-border-hover: rgba(77, 71, 215, 0.35);
-  --brand-purple: #4D47D7;
-  --brand-violet: #6366f1;
-  --brand-magenta: #8b5cf6;
-  --brand-lavender: #ecebff;
-  --brand-cyan: #0ea5e9;
-  --brand-glow: rgba(77, 71, 215, 0.35);
-
-  /* Primary Mapped Values */
-  --primary: #4D47D7;
-  --primary-hover: #3d37c9;
-  --primary-light: #ecebff;
-  --primary-muted: #7873ec;
-  --primary-glow: rgba(77, 71, 215, 0.35);
-
-  --secondary: #6366f1;
-  --secondary-hover: #4f46e5;
-  --secondary-light: #eef2ff;
-  --accent: #0ea5e9;
-
-  --brand-text: #0f172a;
-  --brand-muted: #64748b;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Outfit', sans-serif;
 }
 
-/* Base Body: Crisp White Background with AI Startup Ambient Mesh Glows */
 body {
-  color: #0f172a;
-  background-color: #ffffff;
-  background-image:
-    radial-gradient(circle at 50% 0%, rgba(77, 71, 215, 0.08) 0%, transparent 55%),
-    radial-gradient(circle at 85% 15%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
-    radial-gradient(circle at 15% 55%, rgba(14, 165, 233, 0.04) 0%, transparent 45%);
-  background-attachment: fixed;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: var(--font-sans);
+  color: #0F172A;
+  background-color: #07080E;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  min-height: 100vh;
+  letter-spacing: -0.02em;
 }
 
-/* AI Startup Bento Card (White Surface + Crisp Borders + Soft Hover Glow) */
-.purple-card,
-.figma-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 1.25rem;
-  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.03), 0 4px 16px -2px rgba(15, 23, 42, 0.04);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.035em;
 }
 
-.purple-card:hover,
-.figma-card:hover {
-  background: #ffffff;
-  border-color: rgba(77, 71, 215, 0.35);
-  box-shadow: 0 20px 35px -8px rgba(77, 71, 215, 0.12), 0 1px 2px rgba(15, 23, 42, 0.04);
-  transform: translateY(-3px);
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Glass Panels in Light Theme */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid #e2e8f0;
-}
-
-.glass-panel-hover:hover {
-  background: #ffffff;
-  border-color: rgba(77, 71, 215, 0.35);
-  box-shadow: 0 20px 35px -8px rgba(77, 71, 215, 0.12);
-  transform: translateY(-3px);
-}
-
-/* Primary Startup Action Buttons (#4D47D7) */
-.btn-purple-primary,
-.btn-figma-primary {
-  background: linear-gradient(135deg, #4D47D7 0%, #5E58E7 100%);
-  color: #ffffff;
-  font-weight: 700;
-  border-radius: 9999px;
-  padding: 0.75rem 1.75rem;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 14px 0 rgba(77, 71, 215, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.btn-purple-primary:hover,
-.btn-figma-primary:hover {
-  background: linear-gradient(135deg, #3d37c9 0%, #4D47D7 100%);
-  box-shadow: 0 6px 20px 0 rgba(77, 71, 215, 0.45);
-  transform: translateY(-2px) scale(1.01);
-}
-
-.btn-purple-secondary,
-.btn-figma-secondary {
-  background: #f4f3ff;
-  color: #4D47D7;
-  font-weight: 700;
-  border: 1px solid rgba(77, 71, 215, 0.2);
-  border-radius: 9999px;
-  padding: 0.75rem 1.75rem;
-  transition: all 0.25s ease;
-}
-
-.btn-purple-secondary:hover,
-.btn-figma-secondary:hover {
-  background: #ecebff;
-  border-color: #4D47D7;
-  color: #3d37c9;
-  transform: translateY(-1px);
-}
-
-/* High-Tech AI Startup Grid Pattern */
-.cyber-grid {
-  background-image:
-    linear-gradient(to right, rgba(77, 71, 215, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(77, 71, 215, 0.05) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-/* Animations */
-@keyframes float-gentle {
+/* FlairsTech Orbs: Floating & Touching each other in center on Hero */
+@keyframes orbTouchLeft {
   0%, 100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.85;
   }
   50% {
-    transform: translateY(-8px) rotate(0.5deg);
+    transform: translate(45px, -12px) scale(1.05);
+    opacity: 0.95;
   }
 }
 
-@keyframes pulse-ring {
-  0% {
-    transform: scale(0.95);
-    opacity: 0.8;
+@keyframes orbTouchRight {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translate(-45px, 12px) scale(1.05);
+    opacity: 0.95;
+  }
+}
+
+.animate-orb-touch-left {
+  animation: orbTouchLeft 8s ease-in-out infinite;
+}
+
+.animate-orb-touch-right {
+  animation: orbTouchRight 8s ease-in-out infinite;
+}
+
+/* Center Radiant Orb Glow for Section 2 (media_1793863390216_e97554de.jpg) */
+@keyframes radiantGlow {
+  0%, 100% {
+    transform: scale(0.97);
+    opacity: 0.92;
   }
   50% {
     transform: scale(1.05);
-    opacity: 0.4;
+    opacity: 1;
+  }
+}
+
+.animate-radiant-glow {
+  animation: radiantGlow 5s ease-in-out infinite;
+}
+
+/* Smooth pulse for map pins */
+@keyframes mapPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 14px rgba(37, 99, 235, 0);
   }
   100% {
     transform: scale(0.95);
-    opacity: 0.8;
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
   }
 }
 
-@keyframes beam-glow {
+.animate-map-pin {
+  animation: mapPulse 2.5s infinite;
+}
+
+/* World Map Pin Levitation & Breathing */
+@keyframes pinLevitate {
   0%, 100% {
-    opacity: 0.4;
-    filter: drop-shadow(0 0 8px rgba(77, 71, 215, 0.4));
+    transform: translateY(0px);
   }
   50% {
-    opacity: 0.9;
-    filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.6));
+    transform: translateY(-6px);
   }
 }
 
-.animate-float-gentle {
-  animation: float-gentle 6s ease-in-out infinite;
+.animate-pin-levitate {
+  animation: pinLevitate 3.5s ease-in-out infinite;
 }
 
-.animate-pulse-ring {
-  animation: pulse-ring 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.animate-beam-glow {
-  animation: beam-glow 4s ease-in-out infinite;
-}
-
-/* Modern Clean Scrollbars */
-::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f8fafc;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 9999px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
-
-:focus-visible {
-  outline: 2px solid #4D47D7;
-  outline-offset: 2px;
-}
-
-/* Continuous Marquee (Right to Left) */
-@keyframes marquee {
+/* Radar Pulse Wave for Global Map */
+@keyframes radarPulse {
   0% {
-    transform: translateX(0%);
+    transform: scale(0.5);
+    opacity: 0.85;
   }
   100% {
-    transform: translateX(-50%);
+    transform: scale(3.2);
+    opacity: 0;
   }
 }
 
-.animate-marquee {
-  display: flex;
-  width: max-content;
-  animation: marquee 25s linear infinite;
+.animate-radar-pulse {
+  animation: radarPulse 2.6s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
 }
 
-.animate-marquee:hover {
-  animation-play-state: paused;
+/* Connecting Arc Data Stream */
+@keyframes dashStream {
+  to {
+    stroke-dashoffset: -120;
+  }
 }
 
+.animate-dash-stream {
+  animation: dashStream 16s linear infinite;
+}
+
+/* Blinking cursor for typewriter effect */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-cursor {
+  animation: blink 0.8s infinite;
+}
