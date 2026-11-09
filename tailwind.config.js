@@ -51,8 +51,10 @@ module.exports = {
         mono: ["'JetBrains Mono'", "monospace"],
       },
       backgroundImage: {
-        "logo-gradient": "linear-gradient(135deg, #7C3AED 0%, #4F46E5 45%, #2563EB 100%)",
-        "logo-gradient-hover": "linear-gradient(135deg, #6D28D9 0%, #4338CA 45%, #1D4ED8 100%)",
+        "brand-gradient": "linear-gradient(to right, #753DED 0%, #524EEC 50%, #2E5FEB 100%)",
+        "brand-gradient-hover": "linear-gradient(to right, #6A32E3 0%, #4741E0 50%, #2254E0 100%)",
+        "logo-gradient": "linear-gradient(135deg, #753DED 0%, #524EEC 50%, #2E5FEB 100%)",
+        "logo-gradient-hover": "linear-gradient(135deg, #6A32E3 0%, #4741E0 50%, #2254E0 100%)",
         "logo-accent-gradient": "linear-gradient(135deg, #A855F7 0%, #6366F1 50%, #2563EB 100%)",
       },
       boxShadow: {

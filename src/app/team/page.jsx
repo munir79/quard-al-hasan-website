@@ -221,7 +221,7 @@ export default function TeamPage() {
               return (
                 <Reveal key={idx} from={colDirection(idx)} className="h-full">
                   <div className={`${card} group h-full p-8 space-y-5`}>
-                    <div className="w-14 h-14 rounded-xl bg-blue-500/10 border border-blue-400/20 text-blue-400 flex items-center justify-center group-hover:bg-blue-600 group-hover:border-blue-500 group-hover:text-white transition-colors">
+                    <div className="w-14 h-14 rounded-xl bg-blue-500/10 border border-blue-400/20 text-blue-400 flex items-center justify-center group-hover:bg-gradient-to-r group-hover:from-[#753DED] group-hover:to-[#2E5FEB] group-hover:border-transparent group-hover:text-white transition-all shadow-sm">
                       <Icon size={26} />
                     </div>
                     <h3 className="text-2xl font-bold text-white leading-snug">{cp.title}</h3>
@@ -234,10 +234,13 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* 5. Careers Callout */}
-      <section className="relative py-20 sm:py-24 border-t border-white/10 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1C] via-[#0D1730] to-[#0A0F1C] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[320px] w-[720px] rounded-full bg-blue-600/15 blur-[110px] pointer-events-none" />
+      {/* 5. Careers Callout (Matching User Reference Design) */}
+      <section className="relative py-20 sm:py-28 text-center overflow-hidden bg-[#0B0F19] border-t border-white/10">
+        {/* Tech Dot Grid Matrix matching user reference */}
+        <div className="absolute inset-0 bg-[radial-gradient(#3B82F6_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
+        
+        {/* Ambient subtle violet-indigo center radial glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[340px] w-[750px] rounded-full bg-gradient-to-r from-purple-600/15 via-indigo-600/20 to-blue-600/15 blur-[120px] pointer-events-none" />
 
         <RevealGroup className="relative z-10 max-w-4xl mx-auto px-4 space-y-6">
           <RevealItem from="left">
@@ -253,10 +256,10 @@ export default function TeamPage() {
           <RevealItem from="up" className="pt-2">
             <a
               href="mailto:qardhalhasanfintech@gmail.com?subject=Career%20Inquiry"
-              className="group inline-flex items-center gap-2 px-9 py-4 rounded-lg text-base font-semibold text-white bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/25 transition-colors"
+              className="group inline-flex items-center gap-2.5 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-base sm:text-lg font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-[0_4px_25px_rgba(117,61,237,0.35)] hover:shadow-[0_6px_35px_rgba(46,95,235,0.5)] transition-all duration-300 hover:scale-105 active:scale-95"
             >
               <span>Send Your Resume</span>
-              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+              <ArrowRight size={19} className="transition-transform duration-300 group-hover:translate-x-1.5" />
             </a>
           </RevealItem>
         </RevealGroup>

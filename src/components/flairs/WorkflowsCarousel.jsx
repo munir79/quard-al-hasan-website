@@ -403,7 +403,7 @@ export default function Hero() {
                 <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }} className="flex">
                   <Link
                     href="/contact"
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0F1C]"
+                    className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-[0_4px_25px_rgba(117,61,237,0.35)] hover:shadow-[0_6px_35px_rgba(46,95,235,0.5)] px-7 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none"
                   >
                     Schedule a Call
                     <ArrowRight
@@ -415,7 +415,7 @@ export default function Hero() {
                 <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }} className="flex">
                   <Link
                     href="/services"
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/[0.03] px-6 py-3.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.07] hover:border-white/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-7 py-3.5 text-sm font-semibold text-slate-200 transition-all hover:bg-white/[0.08] hover:border-white/25 hover:scale-105 active:scale-95 focus:outline-none"
                   >
                     Explore Services
                     <ArrowUpRight

@@ -161,7 +161,7 @@ export default function AboutPage() {
           <Reveal from="up" className="mt-12 text-center">
             <Link
               href="/why-us"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-base font-semibold text-white bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 transition-colors"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-base font-semibold text-white bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 transition-all hover:scale-105 active:scale-95"
             >
               <span>Explore The Qardh Al Hasan Edge</span>
               <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" />
@@ -213,7 +213,7 @@ export default function AboutPage() {
 
             <Reveal from="right" className="lg:col-span-5">
               <div className={`${card} p-8 sm:p-10 space-y-5 text-center`}>
-                <div className="w-16 h-16 mx-auto rounded-2xl bg-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-600/25">
+                <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] flex items-center justify-center text-white shadow-[0_4px_25px_rgba(117,61,237,0.35)]">
                   <Globe2 size={32} />
                 </div>
                 <h3 className="text-2xl font-bold text-white">Global Standards, Local Feel</h3>
@@ -223,10 +223,10 @@ export default function AboutPage() {
                 <div className="pt-2">
                   <Link
                     href="/contact"
-                    className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-base font-semibold text-white bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/25 transition-colors"
+                    className="group inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full text-base font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-[0_4px_25px_rgba(117,61,237,0.35)] hover:shadow-[0_6px_35px_rgba(46,95,235,0.5)] transition-all duration-300 hover:scale-105 active:scale-95"
                   >
                     <span>Connect with Our Leadership</span>
-                    <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" />
+                    <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>

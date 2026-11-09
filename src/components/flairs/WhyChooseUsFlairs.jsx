@@ -53,7 +53,7 @@ export default function WhyChooseUsFlairs() {
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
             Why Leading Businesses{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#4F46E5] to-[#2563EB]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB]">
               Trust Us
             </span>
           </h2>

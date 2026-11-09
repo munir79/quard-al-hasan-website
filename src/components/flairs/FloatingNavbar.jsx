@@ -256,7 +256,7 @@ export default function FloatingNavbar() {
             <div className="flex items-center gap-2 sm:gap-3">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-4 sm:px-5 py-2 rounded-full text-xs font-extrabold text-white bg-gradient-to-r from-[#6366F1] to-[#2563EB] hover:from-[#4F46E5] hover:to-[#1D4ED8] shadow-md shadow-blue-500/25 transition-all shrink-0"
+                className="inline-flex items-center justify-center px-4 sm:px-5 py-2 rounded-full text-xs font-extrabold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-[0_4px_20px_rgba(117,61,237,0.3)] transition-all shrink-0 hover:scale-[1.03] active:scale-[0.98]"
               >
                 <span>Schedule a Call</span>
               </Link>
@@ -509,7 +509,7 @@ export default function FloatingNavbar() {
           <Link
             href="/contact"
             onClick={() => setIsOpen(false)}
-            className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#6366F1] to-[#2563EB] shadow-md shadow-blue-500/25"
+            className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-[0_4px_20px_rgba(117,61,237,0.3)]"
           >
             <span>Schedule a Call</span>
             <ArrowRight size={14} />

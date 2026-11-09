@@ -242,7 +242,7 @@ export default function ServicesPage() {
                         <span className="absolute left-5 top-5 rounded-full border border-white/20 bg-[#0A0F1C]/60 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-white backdrop-blur-md">
                           {service.category}
                         </span>
-                        <div className="absolute bottom-4 left-5 flex h-14 w-14 items-center justify-center rounded-xl border border-blue-300/30 bg-[#0A0F1C]/70 text-blue-300 backdrop-blur-md transition-colors group-hover:border-blue-500 group-hover:bg-blue-600 group-hover:text-white">
+                        <div className="absolute bottom-4 left-5 flex h-14 w-14 items-center justify-center rounded-xl border border-blue-300/30 bg-[#0A0F1C]/70 text-blue-300 backdrop-blur-md transition-all group-hover:border-transparent group-hover:bg-gradient-to-r group-hover:from-[#753DED] group-hover:to-[#2E5FEB] group-hover:text-white shadow-sm">
                           <Icon size={26} />
                         </div>
                       </div>
@@ -267,13 +267,13 @@ export default function ServicesPage() {
                       </ul>
                     </div>
 
-                    <div className="pt-6 mt-6 border-t border-white/10">
+                    <div className="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
                       <Link
                         href={service.route}
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors"
+                        className="group/btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-md shadow-indigo-500/25 transition-all hover:scale-105 active:scale-95"
                       >
                         <span>View full specifications</span>
-                        <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                        <ArrowRight size={14} className="transition-transform group-hover/btn:translate-x-1" />
                       </Link>
                     </div>
                   </div>
@@ -372,10 +372,13 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* 5. Pre-Footer Call to Action */}
-      <section className="relative py-20 sm:py-24 border-t border-white/10 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1C] via-[#0D1730] to-[#0A0F1C] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[320px] w-[720px] rounded-full bg-blue-600/15 blur-[110px] pointer-events-none" />
+      {/* 5. Pre-Footer Call to Action (Exact Match to User Reference Design) */}
+      <section className="relative py-20 sm:py-28 text-center overflow-hidden bg-[#0B0F19] border-t border-white/10">
+        {/* Tech Dot Grid Matrix matching user reference */}
+        <div className="absolute inset-0 bg-[radial-gradient(#3B82F6_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
+
+        {/* Ambient subtle violet-indigo center radial glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[340px] w-[750px] rounded-full bg-gradient-to-r from-purple-600/15 via-indigo-600/20 to-blue-600/15 blur-[120px] pointer-events-none" />
 
         <RevealGroup className="relative z-10 max-w-4xl mx-auto px-4 space-y-6">
           <RevealItem from="left">
@@ -391,10 +394,10 @@ export default function ServicesPage() {
           <RevealItem from="up" className="pt-2">
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 px-9 py-4 rounded-lg text-base font-semibold text-white bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/25 transition-colors"
+              className="group inline-flex items-center gap-2.5 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-base sm:text-lg font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-[0_4px_25px_rgba(117,61,237,0.35)] hover:shadow-[0_6px_35px_rgba(46,95,235,0.5)] transition-all duration-300 hover:scale-105 active:scale-95"
             >
               <span>Schedule Strategy Call</span>
-              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+              <ArrowRight size={19} className="transition-transform duration-300 group-hover:translate-x-1.5" />
             </Link>
           </RevealItem>
         </RevealGroup>

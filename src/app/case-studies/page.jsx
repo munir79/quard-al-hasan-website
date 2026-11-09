@@ -170,22 +170,28 @@ export default function CaseStudiesPage() {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-slate-950 text-white text-center space-y-4">
-          <h3 className="text-2xl sm:text-3xl font-black text-white">
-            Ready to Architect Your Next Success Story?
-          </h3>
-          <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto font-normal">
-            Schedule a strategy consultation with our senior engineers and explore how we can accelerate your tech roadmap.
-          </p>
-          <div className="pt-2">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-extrabold text-white bg-[#2563EB] hover:bg-[#1D4ED8] shadow-lg shadow-blue-500/30 transition-all uppercase tracking-wider"
-            >
-              <span>Schedule a Strategy Session</span>
-              <ArrowRight size={14} />
-            </Link>
+        {/* CTA (Matching User Reference Design) */}
+        <div className="relative p-8 sm:p-14 rounded-3xl bg-[#0B0F19] border border-white/10 text-white text-center space-y-5 overflow-hidden">
+          {/* Tech Dot Grid Matrix */}
+          <div className="absolute inset-0 bg-[radial-gradient(#3B82F6_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[260px] w-[500px] rounded-full bg-gradient-to-r from-purple-600/15 via-indigo-600/20 to-blue-600/15 blur-[100px] pointer-events-none" />
+
+          <div className="relative z-10 space-y-4">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white">
+              Ready to Architect Your Next Success Story?
+            </h3>
+            <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto font-normal leading-relaxed">
+              Schedule a strategy consultation with our senior engineers and explore how we can accelerate your tech roadmap.
+            </p>
+            <div className="pt-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2.5 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-[0_4px_25px_rgba(117,61,237,0.35)] hover:shadow-[0_6px_35px_rgba(46,95,235,0.5)] transition-all duration-300 hover:scale-105 active:scale-95 uppercase tracking-wider"
+              >
+                <span>Schedule a Strategy Session</span>
+                <ArrowRight size={16} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

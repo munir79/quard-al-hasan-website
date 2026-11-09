@@ -378,7 +378,7 @@ export default function NavbarFlairs() {
             <div className="flex items-center gap-2">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs font-bold text-white bg-[#2563EB] hover:bg-[#1D4ED8] shadow-md shadow-blue-500/25 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-[0_4px_20px_rgba(117,61,237,0.3)] hover:shadow-[0_6px_25px_rgba(46,95,235,0.45)] transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
               >
                 <span>Schedule a Call</span>
                 <ArrowRight size={14} className="hidden sm:inline" />
@@ -507,7 +507,7 @@ export default function NavbarFlairs() {
             <div className="pt-6 border-t border-slate-100 space-y-4">
               <Link
                 href="/contact"
-                className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-full text-xs font-bold text-white bg-[#2563EB] hover:bg-[#1D4ED8] shadow-md shadow-blue-500/25 uppercase tracking-wider"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-[0_4px_20px_rgba(117,61,237,0.3)] uppercase tracking-wider"
               >
                 <span>Schedule a Call</span>
                 <ArrowRight size={14} />

@@ -108,7 +108,7 @@ export default function IndustriesSection() {
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
             Industries We{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#4F46E5] to-[#2563EB]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB]">
               Empower
             </span>
           </h2>
@@ -164,7 +164,7 @@ export default function IndustriesSection() {
             
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#7C3AED] to-[#2563EB] text-white flex items-center justify-center shadow-md">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#753DED] via-[#524EEC] to-[#2E5FEB] text-white flex items-center justify-center shadow-md">
                   <Icon size={24} />
                 </div>
                 <div>
@@ -215,7 +215,7 @@ export default function IndustriesSection() {
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-white bg-slate-900 hover:bg-[#4F46E5] transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-md shadow-indigo-500/25 transition-all hover:scale-105 active:scale-95"
               >
                 <span>Discuss {activeIndustry.title}</span>
                 <ArrowRight size={13} />

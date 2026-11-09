@@ -40,7 +40,7 @@ export default function TechPartnersStrip() {
                 key={idx}
                 className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200/90 text-xs font-semibold text-slate-700 hover:border-[#4F46E5]/40 hover:bg-indigo-50/30 transition-all"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#2563EB]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#753DED] to-[#2E5FEB]" />
                 <span>{badge.name}</span>
                 <span className="text-[10px] text-slate-400 font-normal hidden sm:inline">
                   ({badge.category})

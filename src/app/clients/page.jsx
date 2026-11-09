@@ -237,22 +237,28 @@ export default function ClientsPage() {
         </div>
       </section>
 
-      {/* 4. Pre-Footer Call to Action */}
-      <section className="py-16 sm:py-20 bg-slate-900 text-white text-center">
-        <div className="max-w-4xl mx-auto px-4 space-y-6">
-          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+      {/* 4. Pre-Footer Call to Action (Matching User Reference Design) */}
+      <section className="relative py-20 sm:py-28 text-center overflow-hidden bg-[#0B0F19] border-t border-white/10 text-white">
+        {/* Tech Dot Grid Matrix matching user reference */}
+        <div className="absolute inset-0 bg-[radial-gradient(#3B82F6_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
+        
+        {/* Ambient subtle violet-indigo center radial glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[340px] w-[750px] rounded-full bg-gradient-to-r from-purple-600/15 via-indigo-600/20 to-blue-600/15 blur-[120px] pointer-events-none" />
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4 space-y-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
             Want to Achieve Similar Results for Your Business?
           </h2>
-          <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto font-normal">
+          <p className="text-base sm:text-lg text-slate-300 max-w-xl mx-auto font-normal leading-relaxed">
             Schedule a 30-minute consultation with our engineering architects to map your technical roadmap.
           </p>
           <div className="pt-2">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold text-white bg-gradient-to-r from-[#7C3AED] to-[#2563EB] hover:opacity-95 shadow-lg transition-all"
+              className="inline-flex items-center gap-2.5 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-base sm:text-lg font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-[0_4px_25px_rgba(117,61,237,0.35)] hover:shadow-[0_6px_35px_rgba(46,95,235,0.5)] transition-all duration-300 hover:scale-105 active:scale-95"
             >
               <span>Schedule Strategy Call</span>
-              <ArrowRight size={15} />
+              <ArrowRight size={19} className="transition-transform duration-300 group-hover:translate-x-1.5" />
             </Link>
           </div>
         </div>

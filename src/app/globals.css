@@ -150,3 +150,35 @@ h1, h2, h3, h4, .font-display {
 .animate-cursor {
   animation: blink 0.8s infinite;
 }
+
+/* Signature Brand Primary Gradient Button (Exact match to user reference design) */
+.btn-primary-gradient,
+.btn-purple-primary,
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2.25rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(to right, #753DED 0%, #524EEC 50%, #2E5FEB 100%);
+  box-shadow: 0 4px 25px rgba(117, 61, 237, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary-gradient:hover,
+.btn-purple-primary:hover,
+.btn-primary:hover {
+  background: linear-gradient(to right, #6A32E3 0%, #4741E0 50%, #2254E0 100%);
+  box-shadow: 0 6px 35px rgba(46, 95, 235, 0.5);
+  transform: scale(1.03);
+}
+
+.btn-primary-gradient:active,
+.btn-purple-primary:active,
+.btn-primary:active {
+  transform: scale(0.97);
+}
+

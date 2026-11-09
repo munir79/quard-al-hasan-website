@@ -221,7 +221,7 @@ export default function FooterFlairs() {
             <div className="pt-3">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#7C3AED] to-[#2563EB] hover:opacity-90 transition-opacity"
+                className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-[0_4px_20px_rgba(117,61,237,0.3)] transition-all hover:scale-105 active:scale-95"
               >
                 <span>Book a Strategy Call</span>
                 <ArrowRight size={13} />

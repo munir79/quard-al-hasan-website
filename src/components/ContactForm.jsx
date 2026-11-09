@@ -78,7 +78,7 @@ export default function ContactForm() {
               href="https://wa.me/60178947597?text=Hi%20Qardh%20Al%20Hasan%20Fintech%2C%20I%20would%20like%20to%20discuss%20a%20project"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 items-center rounded-lg bg-blue-600 px-6 text-[15px] font-semibold text-white transition-colors hover:bg-blue-500"
+              className="inline-flex h-12 items-center rounded-full bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] px-7 text-[15px] font-bold text-white shadow-md shadow-indigo-500/25 transition-all hover:scale-105 active:scale-95"
             >
               Continue on WhatsApp
             </a>
@@ -202,7 +202,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="group flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-blue-600 text-base font-semibold text-white transition-colors hover:bg-blue-500 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-500/30 disabled:cursor-not-allowed disabled:opacity-70"
+              className="group flex h-14 w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] text-base font-bold text-white shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:scale-[1.01] active:scale-95 transition-all focus:outline-none disabled:cursor-not-allowed disabled:opacity-70"
             >
               {isSubmitting ? (
                 "Sending..."

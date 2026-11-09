@@ -93,7 +93,7 @@ export default function TeamSlider({ members = [] }) {
           type="button"
           onClick={() => scrollByCard(-1)}
           aria-label="Previous team members"
-          className="h-12 w-12 rounded-full border border-white/15 bg-white/[0.05] text-white hover:bg-blue-600 hover:border-blue-500 transition-colors flex items-center justify-center"
+          className="h-12 w-12 rounded-full border border-white/15 bg-white/[0.05] text-white hover:bg-gradient-to-r hover:from-[#753DED] hover:via-[#524EEC] hover:to-[#2E5FEB] hover:border-transparent hover:shadow-[0_4px_20px_rgba(117,61,237,0.35)] transition-all duration-300 flex items-center justify-center"
         >
           <ChevronLeft size={22} />
         </button>
@@ -101,7 +101,7 @@ export default function TeamSlider({ members = [] }) {
           type="button"
           onClick={() => scrollByCard(1)}
           aria-label="Next team members"
-          className="h-12 w-12 rounded-full border border-white/15 bg-white/[0.05] text-white hover:bg-blue-600 hover:border-blue-500 transition-colors flex items-center justify-center"
+          className="h-12 w-12 rounded-full border border-white/15 bg-white/[0.05] text-white hover:bg-gradient-to-r hover:from-[#753DED] hover:via-[#524EEC] hover:to-[#2E5FEB] hover:border-transparent hover:shadow-[0_4px_20px_rgba(117,61,237,0.35)] transition-all duration-300 flex items-center justify-center"
         >
           <ChevronRight size={22} />
         </button>

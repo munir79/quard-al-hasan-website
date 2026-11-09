@@ -107,7 +107,7 @@ export default function ServicesEcosystem() {
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
               Comprehensive Services{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#4F46E5] to-[#2563EB]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB]">
                 Built for Scale
               </span>
             </h2>
@@ -137,7 +137,7 @@ export default function ServicesEcosystem() {
                 <div>
                   {/* Top Bar: Icon + Category Tag */}
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#7C3AED] via-[#4F46E5] to-[#2563EB] text-white flex items-center justify-center shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#753DED] via-[#524EEC] to-[#2E5FEB] text-white flex items-center justify-center shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
                       <Icon size={24} />
                     </div>
                     <span

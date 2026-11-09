@@ -254,7 +254,7 @@ export default function AiInnovationSection() {
               >
                 <Link
                   href="/services/fintech"
-                  className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs font-bold text-white bg-[#2563EB] hover:bg-[#1D4ED8] transition-colors shadow-xl shadow-blue-500/25 uppercase tracking-wider"
+                  className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-[0_4px_25px_rgba(117,61,237,0.35)] hover:shadow-[0_6px_35px_rgba(46,95,235,0.5)] transition-all duration-300 hover:scale-105 active:scale-95 uppercase tracking-wider"
                 >
                   <span>Explore Qardh AI</span>
                   <ArrowUpRight

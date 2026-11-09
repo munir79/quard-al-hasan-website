@@ -3,11 +3,14 @@ import { ArrowRight, Phone, MessageSquare, Sparkles } from "lucide-react";
 
 export default function ConversionCtaFlairs() {
   return (
-    <section className="relative py-20 sm:py-24 bg-gradient-to-r from-[#1E1B4B] via-[#0F172A] to-[#1E1B4B] text-white overflow-hidden border-b border-slate-800">
+    <section className="relative py-20 sm:py-28 bg-[#0B0F19] text-white overflow-hidden border-t border-b border-white/10">
+      {/* Tech Dot Grid Matrix matching user reference */}
+      <div className="absolute inset-0 bg-[radial-gradient(#3B82F6_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
+      
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[340px] bg-gradient-to-r from-purple-600/15 via-indigo-600/20 to-blue-600/15 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
         
         {/* Pill */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-mono font-bold text-indigo-300">
@@ -32,12 +35,12 @@ export default function ConversionCtaFlairs() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full text-sm sm:text-base font-bold text-white bg-gradient-to-r from-[#7C3AED] via-[#4F46E5] to-[#2563EB] hover:from-[#6D28D9] hover:via-[#4338CA] hover:to-[#1D4ED8] shadow-xl shadow-indigo-500/30 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+            className="group inline-flex items-center gap-2.5 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-base sm:text-lg font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-[0_4px_25px_rgba(117,61,237,0.35)] hover:shadow-[0_6px_35px_rgba(46,95,235,0.5)] transition-all duration-300 hover:scale-105 active:scale-95"
           >
             <span>Schedule a Consultation</span>
             <ArrowRight
-              size={16}
-              className="transition-transform duration-300 group-hover:translate-x-1"
+              size={18}
+              className="transition-transform duration-300 group-hover:translate-x-1.5"
             />
           </Link>
 

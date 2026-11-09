@@ -282,7 +282,7 @@ export default function DeliveryFramework() {
                     <span className="text-xs font-mono font-bold text-blue-300 bg-blue-400/10 px-2.5 py-1 rounded-full border border-blue-300/20">
                       {step.phase}
                     </span>
-                    <div className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/10 text-slate-200 flex items-center justify-center group-hover:bg-blue-600 group-hover:border-blue-400/50 group-hover:text-white transition-colors">
+                    <div className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/10 text-slate-200 flex items-center justify-center group-hover:bg-gradient-to-r group-hover:from-[#753DED] group-hover:to-[#2E5FEB] group-hover:border-transparent group-hover:text-white transition-all shadow-sm">
                       <Icon size={20} />
                     </div>
                   </div>

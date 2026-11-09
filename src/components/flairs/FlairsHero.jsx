@@ -128,7 +128,7 @@ export default function FlairsHero() {
         <div className="shrink-0 self-start sm:self-end">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs font-bold text-white bg-[#2563EB] hover:bg-[#1D4ED8] shadow-lg shadow-blue-500/30 transition-all hover:scale-105 active:scale-95 uppercase tracking-wider backdrop-blur-md"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-lg shadow-indigo-500/30 transition-all hover:scale-105 active:scale-95 uppercase tracking-wider backdrop-blur-md"
           >
             <span>GET IN TOUCH</span>
             <ArrowUpRight size={16} />

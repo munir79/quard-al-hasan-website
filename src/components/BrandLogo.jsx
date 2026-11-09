@@ -22,9 +22,9 @@ export default function BrandLogo({
               <stop offset="100%" stopColor="#7C3AED" />
             </linearGradient>
             <linearGradient id="qardhPrismGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#7C3AED" />
-              <stop offset="50%" stopColor="#4F46E5" />
-              <stop offset="100%" stopColor="#2563EB" />
+              <stop offset="0%" stopColor="#753DED" />
+              <stop offset="50%" stopColor="#524EEC" />
+              <stop offset="100%" stopColor="#2E5FEB" />
             </linearGradient>
             <filter id="subtleGlow" x="-10%" y="-10%" width="120%" height="120%">
               <feDropShadow dx="0" dy="4" stdDeviation="4" floodColor="#4F46E5" floodOpacity="0.25" />

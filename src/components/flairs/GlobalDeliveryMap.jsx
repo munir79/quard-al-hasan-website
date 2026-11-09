@@ -524,9 +524,9 @@ export default function GlobalDeliveryMap() {
                     key={pin.id}
                     type="button"
                     onClick={() => setActivePin(activePin?.id === pin.id ? null : pin)}
-                    className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                    className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
                       activePin?.id === pin.id
-                        ? "border border-blue-400/60 bg-[#2563EB] text-white shadow-md shadow-blue-500/30 scale-105"
+                        ? "border border-indigo-400/60 bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] text-white shadow-md shadow-indigo-500/30 scale-105"
                         : "border border-white/10 bg-white/[0.06] text-slate-300 hover:bg-white/[0.12] hover:text-white"
                     }`}
                   >

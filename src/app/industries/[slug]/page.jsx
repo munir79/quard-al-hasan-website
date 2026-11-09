@@ -71,14 +71,14 @@ export default function IndustryDetailPage({ params }) {
         <div className="pt-2 flex flex-wrap items-center gap-4">
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-2 px-7 py-4 rounded-lg text-base font-semibold text-white bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/30 transition-colors"
+            className="group inline-flex items-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-full text-base font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-[0_4px_25px_rgba(117,61,237,0.35)] hover:shadow-[0_6px_35px_rgba(46,95,235,0.5)] transition-all duration-300 hover:scale-105 active:scale-95"
           >
             <span>Schedule a Consultation</span>
-            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+            <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
           <Link
             href="/industries"
-            className="inline-flex items-center gap-2 px-7 py-4 rounded-lg text-base font-semibold text-white bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/25 transition-colors"
+            className="inline-flex items-center gap-2 px-7 py-3.5 sm:py-4 rounded-full text-base font-semibold text-white bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/25 transition-all hover:scale-105 active:scale-95"
           >
             <span>All Industries</span>
           </Link>
@@ -159,10 +159,10 @@ export default function IndustryDetailPage({ params }) {
                   </p>
                   <Link
                     href="/contact"
-                    className="group w-full inline-flex items-center justify-center gap-2 py-4 rounded-lg text-base font-semibold text-white bg-blue-600 hover:bg-blue-500 transition-colors"
+                    className="group w-full inline-flex items-center justify-center gap-2.5 py-4 rounded-full text-base font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-[0_4px_25px_rgba(117,61,237,0.35)] hover:shadow-[0_6px_35px_rgba(46,95,235,0.5)] transition-all duration-300 hover:scale-105 active:scale-95"
                   >
                     <span>Book Strategy Call</span>
-                    <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+                    <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>
@@ -171,10 +171,13 @@ export default function IndustryDetailPage({ params }) {
         </div>
       </section>
 
-      {/* 3. Pre-Footer Call to Action */}
-      <section className="relative py-20 sm:py-24 border-t border-white/10 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1C] via-[#0D1730] to-[#0A0F1C] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[320px] w-[720px] rounded-full bg-blue-600/15 blur-[110px] pointer-events-none" />
+      {/* 3. Pre-Footer Call to Action (Matching User Reference Design) */}
+      <section className="relative py-20 sm:py-28 text-center overflow-hidden bg-[#0B0F19] border-t border-white/10">
+        {/* Tech Dot Grid Matrix matching user reference */}
+        <div className="absolute inset-0 bg-[radial-gradient(#3B82F6_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
+        
+        {/* Ambient subtle violet-indigo center radial glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[340px] w-[750px] rounded-full bg-gradient-to-r from-purple-600/15 via-indigo-600/20 to-blue-600/15 blur-[120px] pointer-events-none" />
 
         <RevealGroup className="relative z-10 max-w-4xl mx-auto px-4 space-y-6">
           <RevealItem from="left">
@@ -190,10 +193,10 @@ export default function IndustryDetailPage({ params }) {
           <RevealItem from="up" className="pt-2">
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 px-9 py-4 rounded-lg text-base font-semibold text-white bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/25 transition-colors"
+              className="group inline-flex items-center gap-2.5 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-base sm:text-lg font-bold text-white bg-gradient-to-r from-[#753DED] via-[#524EEC] to-[#2E5FEB] hover:from-[#6A32E3] hover:via-[#4741E0] hover:to-[#2254E0] shadow-[0_4px_25px_rgba(117,61,237,0.35)] hover:shadow-[0_6px_35px_rgba(46,95,235,0.5)] transition-all duration-300 hover:scale-105 active:scale-95"
             >
               <span>Schedule Strategy Call</span>
-              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+              <ArrowRight size={19} className="transition-transform duration-300 group-hover:translate-x-1.5" />
             </Link>
           </RevealItem>
         </RevealGroup>
